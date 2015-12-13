@@ -1,0 +1,111 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>The Great Text Adventure for Epic Lootz</title>
+
+		
+		<link href="image/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="https://d96187c1bd53cc9928523801d4cda8153aea1b1e.googledrive.com/host/0B34NA0csYJZufmxmcVBhTDhYVzZCRXhWMU9BOUYzcUxfVUcwMjEyRTN0eXhHRDQ0OTFZWmM/defaultTheme.css" /> 
+		<script type="text/javascript" src="https://d96187c1bd53cc9928523801d4cda8153aea1b1e.googledrive.com/host/0B34NA0csYJZufmxmcVBhTDhYVzZCRXhWMU9BOUYzcUxfVUcwMjEyRTN0eXhHRDQ0OTFZWmM/adventureCode.js"></script>
+		<script type="text/javascript" src="https://d96187c1bd53cc9928523801d4cda8153aea1b1e.googledrive.com/host/0B34NA0csYJZufmxmcVBhTDhYVzZCRXhWMU9BOUYzcUxfVUcwMjEyRTN0eXhHRDQ0OTFZWmM/interfaceCode.js"></script>
+		
+
+
+
+
+	</head>
+
+	<body>
+		<table id="outerTable">
+			<tr id="outerRowTop">
+				<td colspan="3" id="colThings"> </td>
+				<td > </td>
+				<td colspan="3" id="colThings"> </td>
+			</tr>
+			<tr id="outerRowMid">
+				<td id="colThings"> </td>
+				<td id="colThings"> </td>
+				<td id="colThings"> </td>
+				<td>
+					<table id="mainTable">
+						<tr id="mainRow1">
+							<td> <table id="image"> <tr>
+								<td id="imageField"> <img src="" id="imageThing" /> </td>
+							</tr> </table> </td>
+							<td id="textField"> <p id="textBody"> </p> </td>
+						</tr>
+						<tr id="mainRow2">
+							<td id="mainRow2Back" colspan="2">
+								<table>
+								<td id="nameField"> <p id="playerName"> Player Name </p> </td>
+								<td id="inputField"> <input id="textInput" type="text" value="" /> </td>
+								</table>
+							</td>
+						</tr>
+						<tr id="mainRow3">
+							<td id="inventoryField"> 
+								<table id="inventory"> <tr> <td>
+									<p id="invHeader"> INVENTORY </p> <p id="invItem1"> Item 1: </p> <p id="invItem2"> Item 2: </p>
+								</td> </tr> </table>
+							</td>
+							<td id="hintField">
+								<table id="actions"> <tr> <td>
+									<p id="hintHeader"> ACTIONS </p> <p id="hintContent">  </p>
+								</td> </tr> </table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td id="colThings"> </td>
+				<td id="colThings"> </td>
+				<td id="colThings"> </td>
+			</tr>
+			<tr id="outerRowBot">
+				<td colspan="3" id="colThings"> </td>
+				<td > </td>
+				<td colspan="3" id="colThings"> </td>
+			</tr>
+		</table>
+	</body>
+	<script>
+	
+	// var that sets the scroll box to the bottom
+	var scrollThingy = document.getElementById("textBody");
+	
+	// submits user input on enter press
+	document.getElementById("textInput").addEventListener("keydown", 
+		function(e) {
+			if (e.keyCode == 13) {
+				writeUserText();
+				scanUserInput();
+			}
+		}, false);
+	
+	
+	// writes user input on screen
+	function writeUserText(){
+		mainText = document.getElementById("textBody").innerHTML;
+		userInput = document.getElementById("textInput").value;
+		
+		document.getElementById("textBody").innerHTML = mainText + "<br/><br/> >" + userInput;
+		scrollThingy.scrollTop = scrollThingy.scrollHeight;
+	}
+	
+	// writes game dialogue to the screen
+	function writeGameText() {
+		mainText = document.getElementById("textBody").innerHTML;
+		document.getElementById("textBody").innerHTML = mainText + "<br/>" + gameText;
+		scrollThingy.scrollTop = scrollThingy.scrollHeight;
+	}
+	
+	//runs the initial welcome sequence 
+	gameSetup();
+	
+	
+
+	
+	
+	
+	</script>
+</html>
