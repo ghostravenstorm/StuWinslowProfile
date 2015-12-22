@@ -336,10 +336,15 @@ function projectWindow(name, wdt, hgt, aboutText, address, numOfFrames){
 
 
 	//create the window element and set initial properties
-	var win = window.open("", "", "width="+(wdt+(15*numOfFrames)).toString()+", height="+(hgt+(100*numOfFrames)).toString());
+	var win = window.open("", "_blank", "width="+(wdt+(15*numOfFrames)).toString()+", height="+(hgt+(100*numOfFrames)).toString());
+	win.document.open();
+	win.document.write("<hmtl><body>");
+	win.document.close();
 	win.document.body.style.backgroundColor = BACKGROUND_COLOR;
 	win.document.body.style.fontFamily = "Courier New";
 	win.document.title = name;
+
+	
 	
 	//Create global div container for the window. All elements get appended to this instead of <body>
 	var winContainer = new Container("windowContainer", win);
@@ -395,11 +400,14 @@ function projectWindow(name, wdt, hgt, aboutText, address, numOfFrames){
 	//run initial functions to display the project on open
 	showFrame(iFrames);
 	buttonList.getButton(0).setSel(true);
+
+	
 }
 
 function fetchFile(file){
 
 	//Does not work in Chrome with file:/// requests
+	//except when actaully running from a websevrer and not locally.
 	
 	var data = new XMLHttpRequest();
 	var textData;
@@ -589,7 +597,7 @@ function loadUnity(projectListCont){
 
 	var nano = new Button("[Project.nano]", ORANGE_COLOR, BLUE_COLOR);
 	projectListCont.addChild(nano.getElem());
-	nano.addFunc(["Project.nano", 976, 556, fetchFile("AboutProjectNano.txt"), ["file:///K:/USER/STUART/WebSiteStuff/PersonalSite/ProjectNanoWeb/ProjectNanoWeb.html"]], projectWindow);
+	nano.addFunc(["Project.nano", 976, 556, fetchFile("AboutProjectNano.txt"), ["ProjectNanoWeb/ProjectNanoWeb.html"]], projectWindow);
 }
 
 function loadJavaScript(projectListCont){
@@ -610,8 +618,8 @@ function loadJavaScript(projectListCont){
 	];
 
 	buttonParams = [
-		["This.Profile", 600, 600, fetchFile("AboutProfile.txt"), ["file:///K:/USER/STUART/WebSiteStuff/PersonalSite/Index.html"]],
-		["The Great Text Adventure", 980, 726, fetchFile("AboutTextAdventure.txt"), ["file:///K:/USER/STUART/WebSiteStuff/PersonalSite/TextAdventure.html"]]
+		["This.Profile", 600, 600, fetchFile("AboutProfile.txt"), ["index.html"]],
+		["The Great Text Adventure", 980, 726, fetchFile("AboutTextAdventure.txt"), ["TextAdventure.html"]]
 	];
 
 	var buttonList = new ButtonList(projectListCont, buttonNames, buttonFuncs, buttonParams);
@@ -640,7 +648,7 @@ function loadProcessing(projectListCont){
 
 	buttonParams = [
 		["Mr. Oogle", 512, 524, fetchFile("AboutMrOogle.txt"), ["http://www.openprocessing.org/sketch/208246/embed/?width=500&height=500&border=true"]],
-		["Moving Dots", 512, 524, fetchFile("AboutMovingDots.txt"), ["http://www.openprocessing.org/sketch/208247/embed/?width=500&height=500&border=true", "file:///K:/USER/STUART/WebSiteStuff/PersonalSite/MovingDots_htmlCanvas/MovingCircles_Canvas.html"], 2],
+		["Moving Dots", 512, 524, fetchFile("AboutMovingDots.txt"), ["http://www.openprocessing.org/sketch/208247/embed/?width=500&height=500&border=true", "MovingDots_htmlCanvas/MovingCircles_Canvas.html"], 2],
 		["Ship Game", 512, 524, fetchFile("AboutShipGame.txt"), ["http://www.openprocessing.org/sketch/190500/embed/?width=500&height=500&border=true"]],
 		["Muffin Button", 512, 524, fetchFile("AboutMuffinButton.txt"), ["http://www.openprocessing.org/sketch/185774/embed/?width=500&height=500&border=true"]]
     ];
