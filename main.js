@@ -610,7 +610,7 @@ function loadJavaScript(projectListCont){
 	];
 
 	buttonParams = [
-		["This.Profile", 600, 600, fetchFile("AboutProfile.txt"), ["file:///K:/USER/STUART/WebSiteStuff/PersonalSite/Profile5.html"]],
+		["This.Profile", 600, 600, fetchFile("AboutProfile.txt"), ["file:///K:/USER/STUART/WebSiteStuff/PersonalSite/Index.html"]],
 		["The Great Text Adventure", 980, 726, fetchFile("AboutTextAdventure.txt"), ["file:///K:/USER/STUART/WebSiteStuff/PersonalSite/TextAdventure.html"]]
 	];
 
