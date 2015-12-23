@@ -242,7 +242,7 @@ function Container(id, win){
 
 	//Object that holds a DIV element which is used to hold other created elements.
 
-	//checks for a child window, if so then append this dic to that window
+	//checks for a child window, if so then append this div to that window
 	if(win == null){
 		var elem = document.createElement("DIV");
 	}
@@ -310,6 +310,8 @@ function LinkList(container, win, names, links){
 	//Structure that manages and displays all links created for it. 
 	//used only once in the AboutMe section
 
+	//there must be a link[] for each name[] that must also be in an array structure.
+
 	elements = [];
 
 	for (i = 0; i < names.length; i++){
@@ -321,7 +323,7 @@ function LinkList(container, win, names, links){
 	}
 }
 
-function projectWindow(name, wdt, hgt, aboutText, address, numOfFrames){
+function projectWindow(name, wdt, hgt, aboutText, address){
 
 	//address must be in an array structure even if only 1 frame is being made.
 
@@ -330,21 +332,18 @@ function projectWindow(name, wdt, hgt, aboutText, address, numOfFrames){
 
 	//checks for initially missing parameters
 	if(name == null)       { name = "Default Name"; }
-	if(numOfFrames == null){ numOfFrames = 1; }
 	if(wdt == null)        { wdt = 500; }
-	if(hgt == null)        { hgt = 500; }	
-
+	if(hgt == null)        { hgt = 500; }
 
 	//create the window element and set initial properties
-	var win = window.open("", "_blank", "width="+(wdt+(15*numOfFrames)).toString()+", height="+(hgt+(100*numOfFrames)).toString());
+	var win = window.open("", "_blank", "width="+((wdt+15)*address.length).toString()+", height="+(hgt+100).toString());
+	console.log(address.length);
 	win.document.open();
 	win.document.write("<hmtl><body>");
 	win.document.close();
 	win.document.body.style.backgroundColor = BACKGROUND_COLOR;
 	win.document.body.style.fontFamily = "Courier New";
 	win.document.title = name;
-
-	
 	
 	//Create global div container for the window. All elements get appended to this instead of <body>
 	var winContainer = new Container("windowContainer", win);
@@ -359,9 +358,9 @@ function projectWindow(name, wdt, hgt, aboutText, address, numOfFrames){
 	//project description
 	var text = new PElement(aboutText, WHITE_COLOR);
 
-	//create the iframe elements based on numOfFrames
+	//create the iframe elements based on number of addresses passed in
 	var iFrames = [];
-	for(i = 0; i < numOfFrames; i++){
+	for(i = 0; i < address.length; i++){
 		iFrames[i] = new ItemFrame(wdt, hgt, address[i]);
 	}
 
@@ -380,19 +379,19 @@ function projectWindow(name, wdt, hgt, aboutText, address, numOfFrames){
 	winContainer.append(win.document.body);
 	projContainer.append(winContainer.getElem());
 
-	//method that clears the project div and displays either the project or about info
+	//method that clears the project div and displays about info
 	function showAbout(obj){
 		projContainer.clearNodes();
 		makeNewLines(projContainer, 1);
 		projContainer.addChild(obj.getElem());
 	}
 
-	//separate show content fuction that handles multiple iframes specifically
+	//separate show content function that handles multiple iframes specifically
 	function showFrame(arry){
 		projContainer.clearNodes();
 		makeNewLines(projContainer, 1);
 
-		for(i = 0; i < arry.length; i++){
+		for(i = 0; i < address.length; i++){
 			projContainer.addChild(arry[i].getElem());
 		}
 	}
@@ -400,14 +399,15 @@ function projectWindow(name, wdt, hgt, aboutText, address, numOfFrames){
 	//run initial functions to display the project on open
 	showFrame(iFrames);
 	buttonList.getButton(0).setSel(true);
-
-	
 }
 
 function fetchFile(file){
 
 	//Does not work in Chrome with file:/// requests
 	//except when actaully running from a websevrer and not locally.
+
+	//concatenate file path with file name
+	file = "abouttext/"+file;
 	
 	var data = new XMLHttpRequest();
 	var textData;
@@ -432,10 +432,9 @@ function fetchFile(file){
 	reader.readAsText(file);
 
 	return reader.result();
-	*/
-	
-	
+	*/	
 
+	//returns a string
 	return textData;
 }
 
@@ -450,7 +449,7 @@ function makeNewLines(interfaceObj, num){
 	// 'interfaceObj' is the div container object that needs line breaks and 'num' being how many to add.
 	// this macro calls the 'addChild' method in the 'Conatiner' class.
 
-	// checks if no number was passed in. If so, default to 1.
+	// checks if no number was passed in. If so default to 1.
 	if(num == null){ num = 1; }
 
 	for(i = 0; i < num; i++){
@@ -461,7 +460,7 @@ function makeNewLines(interfaceObj, num){
 function closeWindow(win){ win.close(); }
 
 
-//Experimental; currently unused. Designed to clean up potential memory leaks.
+//Experimental. Currently unused. Designed to clean up potential memory leaks.
 /*
 function cleanUp(){
 
@@ -490,6 +489,7 @@ function loadMainMenu(){
 
 	document.body.style.backgroundColor = BACKGROUND_COLOR;
 
+	//used to group [Projects] and [About] together
 	var siblings = []
 
 	//make the main central container for everything
@@ -507,7 +507,7 @@ function loadMainMenu(){
 	siblings.push(projects);
 	siblings.push(about);
 
-	//append objects to the initially ccreated <span> tags in the html
+	//append objects to the initially created <span> tags in the html
 	container.append(document.getElementById("bodyContent"));
 	resume.append(document.getElementById("resume"));
 	projects.append(document.getElementById("projects"));
@@ -530,10 +530,12 @@ function loadAboutMe(container){
 
 	//Containers for link names and their address.
 	var names = ["[LinkedIn]", "[Itch.io]", "[Open Processing]"];
-	var links = ['https://www.linkedin.com/pub/stuart-winslow/58/4b1/864',
-				 'http://ghostravenstorm.itch.io/',
-				 'http://www.openprocessing.org/user/47167'
-				];
+
+	var links = [
+		'https://www.linkedin.com/pub/stuart-winslow/58/4b1/864',
+		'http://ghostravenstorm.itch.io/',
+		'http://www.openprocessing.org/user/47167'
+	];
 
 	var text = new PElement(fetchFile("AboutMe.txt"), WHITE_COLOR, null, 700, 400);
 	container.addChild(text.getElem());
