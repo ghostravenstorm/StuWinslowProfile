@@ -336,7 +336,7 @@ function projectWindow(name, wdt, hgt, aboutText, address){
 	if(hgt == null)        { hgt = 500; }
 
 	//create the window element and set initial properties
-	var win = window.open("", "_blank", "width="+((wdt+15)*address.length).toString()+", height="+(hgt+100).toString());
+	var win = window.open("", "_blank", "width="+((wdt+20)*address.length).toString()+", height="+(hgt+100).toString());
 	console.log(address.length);
 	win.document.open();
 	win.document.write("<hmtl><body>");
