@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+
+	<script src="hexagon.js"></script>
+	<script>
+		function hex(){
+			var hexContainer = document.createElement("DIV");
+			hexContainer.style.position = "relative";
+			hexContainer.style.marginTop = "10px";
+			hexContainer.style.marginBottom = "10px";
+			hexContainer.id = "HexContainer";
+
+			document.getElementById("thing").appendChild(hexContainer);
+
+			makeHex(4, 5, 6, hexContainer);
+		}
+	</script>
+
+</head>
+<body onload="hex()">
+
+	<div id="thing"></div>
+
+</body>
+</html>

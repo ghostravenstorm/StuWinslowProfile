@@ -2,19 +2,36 @@
 //Constants
 	var HIGHLIGHT_FCOLOR = "#003366";
 	var HIGHLIGHT_BCOLOR = "#3399FF";
-	var PURPLE_COLOR     = "#9966FF";
+	var PURPLE_COLOR     = "#AA80FF";
 	var PINK_COLOR       = "#FF3399";
-	var GREEN_COLOR      = "#00FF99";
+	var GREEN_COLOR      = "#00FF00";
 	var ORANGE_COLOR     = "#FF9900";
-	var BLUE_COLOR       = "#3399FF";
+	var BLUE_COLOR       = "#00BBCC";
 	var GRAY_COLOR       = "#777777";
 	var YELLOW_COLOR     = "#FFFF00";
 	var WHITE_COLOR      = "#FFFFFF";
 	var BLACK_COLOR      = "#000000";
 	var BACKGROUND_COLOR = "#14191f";
 
+//Color Themes
+/*
+ 	var Button_DefaultColor = ;
+ 	var Button_DefaultHColor = ;
+ 	var Links_DefaultColor = ;
+ 	var Email_StaticColor = ;
 
-//Framework
+ 	var UnityProjects_StaticColor
+ 	var JavaScriptProjects_StaticColor
+ 	var ProcessingProjects_StaticColor
+ 	var JavaScriptProjects_HighlightColor
+ 	var UnityProjects_HighlightColor
+ 	var ProcessingProjects_HighlightColor
+ 	*/
+
+
+
+
+// ------------ Framework ----------------
 function Button(name, nColor, sColor, win, siblings){
 
 	//Object used to hold an achor element that is used as a button to 
@@ -238,7 +255,7 @@ function ItemFrame(wdt, hgt, address){
 	});
 }
 
-function Container(id, win){
+function Container(id, wdt, hgt, win){
 
 	//Object that holds a DIV element which is used to hold other created elements.
 
@@ -249,13 +266,21 @@ function Container(id, win){
 	else{
 		var elem = win.document.createElement("DIV");
 	}
+
 	elem.setAttribute("id", id);
 
+	if(wdt != null){ elem.style.width = wdt; }
+	if(hgt != null){ elem.style.height = hgt; }
+
+	this.setDimensions = (function setDimensions(wdt, hgt){
+		if(wdt != null){ elem.style.width = wdt; }
+		if(hgt != null){ elem.style.height = hgt; }
+	});
 
 	//sets html id of the div
 	this.setID = (function setID(id){
 		elem.setAttribute("id", id);
-	})
+	});
 
 	//appends a node to this container
 	this.addChild = (function addChild(obj){
@@ -270,7 +295,7 @@ function Container(id, win){
 	//returns the element node of this interface
 	this.getElem = (function getElem(){
 		return elem;
-	})
+	});
 
 	//clears all nodes in this container
 	this.clearNodes = (function clearNodes(){
@@ -278,14 +303,17 @@ function Container(id, win){
 		while( elem.hasChildNodes()){
 			elem.removeChild(elem.lastChild);
 		}
-	})
+	});
 }
 
-function ButtonList(container, names, funcs, params, nColor, sColor){
+function ButtonList(container, names, funcs, params, nColor, sColor, newLines){
 
 	//Object that holds an array of buttons that all belong together in the same category.
 	//This method also controls the selection color of each button in siblings[] by passing
 	//the array to each button that is created so each button knows who its siblings are.
+
+	if(newLines == null)
+		newLines = false;
 
 	siblings = [];
 
@@ -296,7 +324,10 @@ function ButtonList(container, names, funcs, params, nColor, sColor){
 
 		container.addChild(siblings[i].getElem());
 
-		container.addChild(makeNewSpace());
+		if(newLines)
+			newBreak(container);
+		else
+			container.addChild(makeNewSpace());
 	}
 
 	//returns a single button from the list
@@ -305,7 +336,7 @@ function ButtonList(container, names, funcs, params, nColor, sColor){
 	});
 }
 
-function LinkList(container, win, names, links){
+function LinkList(container, win, names, links, color){
 
 	//Structure that manages and displays all links created for it. 
 	//used only once in the AboutMe section
@@ -315,7 +346,7 @@ function LinkList(container, win, names, links){
 	elements = [];
 
 	for (i = 0; i < names.length; i++){
-		elements[i] = new ExLink(names[i], ORANGE_COLOR, win, links[i]);
+		elements[i] = new ExLink(names[i], color, win, links[i]);
 
 		container.addChild(elements[i].getElem());
 
@@ -323,6 +354,7 @@ function LinkList(container, win, names, links){
 	}
 }
 
+/* //old system usde for popup windows
 function projectWindow(name, wdt, hgt, aboutText, address){
 
 	//address must be in an array structure even if only 1 frame is being made.
@@ -400,6 +432,58 @@ function projectWindow(name, wdt, hgt, aboutText, address){
 	showFrame(iFrames);
 	buttonList.getButton(0).setSel(true);
 }
+*/
+
+function projectContainer(name, container, wdt, hgt, aboutText, address){
+
+	container.clearNodes();
+
+	var subContainer = new Container("subContainer", "550px");
+	
+	var name = new PElement("// " + name + " ------", GRAY_COLOR);
+	var text = new PElement(aboutText, WHITE_COLOR);
+
+	var iFrames = [];
+	for(i = 0; i < address.length; i++){
+		iFrames[i] = new ItemFrame(wdt, hgt, address[i]);
+	}
+
+	container.addChild(name.getElem());
+
+	//arrays that hold info for ButtonList to make buttons for this window
+	buttonNames = ["[This.Project]", "[This.About]"];
+	buttonFuncs = [showFrame, showAbout];
+	buttonParams = [[iFrames], [text]];
+
+	//makes the buttons
+	var buttonList = new ButtonList(container, buttonNames, buttonFuncs, buttonParams, BLUE_COLOR, GREEN_COLOR);
+
+	//append div container and nodes
+	subContainer.append(container.getElem());
+	
+
+	//method that clears the project div and displays about info
+	function showAbout(obj){
+		subContainer.clearNodes();
+		subContainer.setDimensions("550px");
+		makeNewLines(subContainer, 1);
+		subContainer.addChild(obj.getElem());
+	}
+
+	//separate show content function that handles multiple iframes specifically
+	function showFrame(arry){
+		subContainer.clearNodes();
+		subContainer.setDimensions("1200px");
+		makeNewLines(subContainer, 1);
+
+		for(i = 0; i < address.length; i++){
+			subContainer.addChild(arry[i].getElem());
+		}
+	}
+
+	showFrame(iFrames);
+	buttonList.getButton(0).setSel(true);
+}
 
 function fetchFile(file){
 
@@ -457,6 +541,10 @@ function makeNewLines(interfaceObj, num){
 	}
 }
 
+function newBreak(container){
+	container.addChild(document.createElement("BR"));
+}
+
 function closeWindow(win){ win.close(); }
 
 
@@ -481,6 +569,7 @@ function cleanUp(){
 }
 */
 
+// -------- CONTENT GENERATORS -----------
 
 //Load Content
 function loadMainMenu(){
@@ -494,14 +583,14 @@ function loadMainMenu(){
 
 	//make the main central container for everything
 	//gest cleared in between [Projects] and [About]
-	var container = new Container("container", null);
+	var container = new Container("MainContainer", null);
 	
 	//make an external link
-	var resume = new ExLink("[Resume]", PINK_COLOR, null, 'https://docs.google.com/document/d/1W5vlxahaXti1E5lYkPppVnmZTysEYAOz_HA5J8uHC-M/edit?usp=sharing');
+	var resume = new ExLink("[Resume]", BLUE_COLOR, null, 'https://docs.google.com/document/d/1W5vlxahaXti1E5lYkPppVnmZTysEYAOz_HA5J8uHC-M/edit?usp=sharing');
 
 	//make buttons that do stuff
-	var projects = new Button("[Projects]", PINK_COLOR, GREEN_COLOR, null, siblings);
-	var about = new Button("[About]", PINK_COLOR, GREEN_COLOR, null, siblings);
+	var projects = new Button("[Projects]", BLUE_COLOR, GREEN_COLOR, null, siblings);
+	var about = new Button("[About]", BLUE_COLOR, GREEN_COLOR, null, siblings);
 
 	//add buttons to an array
 	siblings.push(projects);
@@ -514,9 +603,8 @@ function loadMainMenu(){
 	about.append(document.getElementById("about"));
 
 	//add button functions
-	projects.addFunc([container], loadCategories);
+	projects.addFunc([container], loadProjects);
 	about.addFunc([container], loadAboutMe);
-
 }
 
 function loadAboutMe(container){
@@ -525,6 +613,8 @@ function loadAboutMe(container){
 	
 	container.setID("AboutMe");
 	container.clearNodes();
+
+	container.setDimensions("550px");
 
 	document.getElementById("bodyheaderid").innerHTML="About Me";
 
@@ -541,7 +631,7 @@ function loadAboutMe(container){
 	container.addChild(text.getElem());
 
 	//Creates a data structure for the ExLink interface that holds all the links.
-	var linkList = new LinkList(container, null, names, links);
+	var linkList = new LinkList(container, null, names, links, BLUE_COLOR);
 
 	makeNewLines(container, 1);
 
@@ -550,11 +640,57 @@ function loadAboutMe(container){
 	container.addChild(email.getElem());
 }
 
+function loadProjects(container){
+
+	container.setID("ProjectList");
+	container.clearNodes();
+
+	container.setDimensions("350px");
+
+	document.getElementById("bodyheaderid").innerHTML="Projects";
+
+	makeNewLines(container, 1);
+
+	subContainer = new Container("ProjectContainer");
+
+	buttonNames = [
+		"[The Great Text Adventure]",
+		"[Mr. Oogle]",
+		"[Moving Dots]",
+		"[Muffin Button]",
+		"[Project.Nano]",
+		"[Ship Game]",
+	];
+
+	buttonFuncs = [
+		projectContainer,
+		projectContainer,
+		projectContainer,
+		projectContainer,
+		projectContainer,
+		projectContainer
+	];
+
+	buttonParams = [
+		[ "The Great Text Adventure", subContainer, 980, 726, fetchFile("AboutTextAdventure.txt"), ["TextAdventure.html"] ],
+		[ "Mr. Oogle", subContainer, 512, 524, fetchFile("AboutMrOogle.txt"), ["http://www.openprocessing.org/sketch/208246/embed/?width=500&height=500&border=true"] ],
+		[ "Moving Dots", subContainer, 512, 524, fetchFile("AboutMovingDots.txt"), ["http://www.openprocessing.org/sketch/208247/embed/?width=500&height=500&border=true", "MovingDots_htmlCanvas/MovingCircles_Canvas.html"], 2 ],
+		[ "Muffin Button", subContainer, 512, 524, fetchFile("AboutMuffinButton.txt"), ["http://www.openprocessing.org/sketch/185774/embed/?width=500&height=500&border=true"] ],
+		[ "Project.nano", subContainer, 976, 556, fetchFile("AboutProjectNano.txt"), ["ProjectNanoWeb/ProjectNanoWeb.html"] ],
+		[ "Ship Game", subContainer, 512, 524, fetchFile("AboutShipGame.txt"), ["http://www.openprocessing.org/sketch/190500/embed/?width=500&height=500&border=true"] ]
+	];
+
+	buttonList = new ButtonList(container, buttonNames, buttonFuncs, buttonParams, BLUE_COLOR, GREEN_COLOR, true);
+
+	subContainer.append(container.getElem());
+}
+
+/*
 function loadCategories(container){
 
 	//Takes in DIV interface 'container' lists projects by type
 
-	container.setID("mainContainer");
+	container.setID("ProjectCategoryContainer");
 	container.clearNodes();
 
 	document.getElementById("bodyheaderid").innerHTML="My Projects";
@@ -563,49 +699,58 @@ function loadCategories(container){
 
 	//holds list of projects
 	var projectListCont = new Container("projectListCont", null);
-	var categoryCont = new Container("categoryCont", null);
 
-	names = [
+	buttonNames = [
 		"[Processing]",
 		"[JavaScript]",
 		"[Unity]"
 	];
 
-	funcs = [
+	buttonFuncs = [
 		loadProcessing,
 		loadJavaScript,
 		loadUnity
 	];
 
-	params = [
-		[projectListCont],
-		[projectListCont],
-		[projectListCont]
+	buttonParams = [
+		[null],
+		[null],
+		[null]
 	];
 
-	container.addChild(categoryCont.getElem());
+	//container.addChild(categoryCont.getElem());
 
-	var buttonList = new ButtonList(categoryCont, names, funcs, params);
+	var buttonList = new ButtonList(container, buttonNames, buttonFuncs, buttonParams, BLUE_COLOR, GREEN_COLOR);
 
-	container.addChild(projectListCont.getElem());
-}	
+	//container.addChild(projectListCont.getElem());
+}
 
-function loadUnity(projectListCont){
+function loadProcessing(){}
+function loadJavaScript(){}
 
-	projectListCont.setID("unityProjects");
-	projectListCont.clearNodes();
+
+
+function loadUnity(container){
+
+	container.setID("UnityProjects");
+	container.clearNodes();
 
 	makeNewLines(projectListCont, 1);
 
-	var nano = new Button("[Project.nano]", ORANGE_COLOR, BLUE_COLOR);
-	projectListCont.addChild(nano.getElem());
-	nano.addFunc(["Project.nano", 976, 556, fetchFile("AboutProjectNano.txt"), ["ProjectNanoWeb/ProjectNanoWeb.html"]], projectWindow);
+	var nano = new Button("[Project.nano]", BLUE_COLOR, GREEN_COLOR);
+	container.addChild(nano.getElem());
+
+	nano.addFunc(["Project.nano", 976, 556, fetchFile("AboutProjectNano.txt"), ["ProjectNanoWeb/ProjectNanoWeb.html"]], makeProjectContainer);
 }
 
+/*
 function loadJavaScript(projectListCont){
 
 	projectListCont.setID("javascriptProjects");
 	projectListCont.clearNodes();
+
+	//make new container to place project
+	var projContainer = new Container("projectContainer", null);
 
 	makeNewLines(projectListCont, 1);
 
@@ -615,16 +760,19 @@ function loadJavaScript(projectListCont){
 	];
 
 	buttonFuncs = [
-		projectWindow,
-		projectWindow
+		makeProjectContainer,
+		makeProjectContainer
 	];
 
 	buttonParams = [
-		["This.Profile", 600, 600, fetchFile("AboutProfile.txt"), ["index.html"]],
-		["The Great Text Adventure", 980, 726, fetchFile("AboutTextAdventure.txt"), ["TextAdventure.html"]]
+		["This.Profile", projContainer, 600, 600, fetchFile("AboutProfile.txt"), ["index.html"]],
+		["The Great Text Adventure", projContainer, 980, 726, fetchFile("AboutTextAdventure.txt"), ["TextAdventure.html"]]
 	];
 
-	var buttonList = new ButtonList(projectListCont, buttonNames, buttonFuncs, buttonParams);
+	var buttonList = new ButtonList(projectListCont, buttonNames, buttonFuncs, buttonParams, BLUE_COLOR, GREEN_COLOR);
+
+	//append the empty container after appending the buttons to the parent
+	projContainer.append(projectListCont.getElem());
 }
 
 function loadProcessing(projectListCont){
@@ -642,18 +790,19 @@ function loadProcessing(projectListCont){
 	];
 
 	buttonFuncs = [
-		projectWindow,
-		projectWindow,
-		projectWindow,
-		projectWindow
+		makeProjectContainer,
+		makeProjectContainer,
+		makeProjectContainer,
+		makeProjectContainer
 	];
 
 	buttonParams = [
-		["Mr. Oogle", 512, 524, fetchFile("AboutMrOogle.txt"), ["http://www.openprocessing.org/sketch/208246/embed/?width=500&height=500&border=true"]],
-		["Moving Dots", 512, 524, fetchFile("AboutMovingDots.txt"), ["http://www.openprocessing.org/sketch/208247/embed/?width=500&height=500&border=true", "MovingDots_htmlCanvas/MovingCircles_Canvas.html"], 2],
-		["Ship Game", 512, 524, fetchFile("AboutShipGame.txt"), ["http://www.openprocessing.org/sketch/190500/embed/?width=500&height=500&border=true"]],
-		["Muffin Button", 512, 524, fetchFile("AboutMuffinButton.txt"), ["http://www.openprocessing.org/sketch/185774/embed/?width=500&height=500&border=true"]]
+		["Mr. Oogle", projectListCont, 512, 524, fetchFile("AboutMrOogle.txt"), ["http://www.openprocessing.org/sketch/208246/embed/?width=500&height=500&border=true"]],
+		["Moving Dots", projectListCont, 512, 524, fetchFile("AboutMovingDots.txt"), ["http://www.openprocessing.org/sketch/208247/embed/?width=500&height=500&border=true", "MovingDots_htmlCanvas/MovingCircles_Canvas.html"], 2],
+		["Ship Game", projectListCont, 512, 524, fetchFile("AboutShipGame.txt"), ["http://www.openprocessing.org/sketch/190500/embed/?width=500&height=500&border=true"]],
+		["Muffin Button", projectListCont, 512, 524, fetchFile("AboutMuffinButton.txt"), ["http://www.openprocessing.org/sketch/185774/embed/?width=500&height=500&border=true"]]
     ];
 
-	var buttonList = new ButtonList(projectListCont, buttonNames, buttonFuncs, buttonParams);
+	var buttonList = new ButtonList(projectListCont, buttonNames, buttonFuncs, buttonParams, BLUE_COLOR, GREEN_COLOR);
 }
+*/
