@@ -1,27 +1,21 @@
 Project.nano is a 2D "hacking" game that I made with a team in DIG 4713 Game Design as our final project. The game features a unquie mechanic which the user must use text-based commands to manipulate the environment and solve puzzles to reach the end. 
 
-Instructions:
-> Use tab to toggle Nano's visor to type in commands.
-> Use W, A, S, D to move Nano.
-> Use Q and E to cycle through multiple access points in range.
+# Instructions
+- Use tab to toggle Nano's visor to type in commands.
+- Use W, A, S, D to move Nano.
+- Use Q and E to cycle through multiple access points in range.
 
-Hints:
-> The green circle is Nano's detection range and health indicator.
-> Not all nodes that appear in Nano's visor need commands to be typed.
-> The game does not pause when Nano has her visor down. Be quick!
-> Some security nodes have multiple layers.
-> Nano's health goes back to full after each room. 
+# Hints
+- The green circle is Nano's detection range and health indicator.
+- Not all nodes that appear in Nano's visor need commands to be typed.
+- The game does not pause when Nano has her visor down. Be quick!
+- Some security nodes have multiple layers.
+- Nano's health goes back to full after each room. 
 
-Team:
-> Richard Angel, Sprite work
-> Daniel Boisselle, Lead programming
-> Alexander Boyd, Sprite work
-> Kyle Townsley, Sprite work
-> Joshua Valljeio, Sound & music
-> Stuart Winslow, Assistant Programming 
-
-When starting this project, there was much to learn about Unity and its scripting API. I must have spent about 50% of my alloted time in this project just learning the engine itself and working through turtorials hoping that I could rework what I have achieved in the tutorials into the project. I struggled through quite a few technical difficulties as Unity would crash or fail to compile my scripts. Much of my struggles with this project were mostly due to troubleshooting issues within Linux running Unity. 
-
-I set out on a quest at the time of this project to learn more about Linux operating systems and to bring them more into the realm of productivity and development just to prove that its possible. Linux get much flak about it not having all the supported software that content creation demands or that it not being compatible with existing frameworks that support Windows and Mac. To which I would say to that person, you're absolutely right. However, I am a PC ("Personal" Computer) enthusiast. I have a lot of passion for Linux and discovering new things I can do with it. 
-
-Despite my struggles with Linux alone, I had other difficulties understanding the Unity engine, suhc as how or what it expects of you when coding in C#. I learned the hard way that the engine compiles all the code for you in real time and that any C# compiler used outside the engine would complain about a missing 'UnityEngine' class. As someone whos used to coding in Java and building their own custom framework for 2D graphics, understanding what Unity wanted was very challenging. I had no idea what class constructors the engine was using when instantiating objects or how to even instantiate objects for that matter. I learned that Unity doesn't adhear to the same object oriented principles as Java, or at least noton the surface that's visible to the user. Users in Unity for example must instantiate objects ontot he scene using Unity's special functions to do so. 
+# Team
+- Richard Angel, Sprite work
+- Daniel Boisselle, Lead programming
+- Alexander Boyd, Sprite work
+- Kyle Townsley, Sprite work
+- Joshua Valljeio, Sound & music
+- Stuart Winslow, Assistant Programming 

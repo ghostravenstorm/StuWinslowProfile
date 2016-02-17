@@ -1,4 +1,3 @@
-A simple program that instantiates X number of random circes onto the screen and gives them random parameters for size, color, and movement. Each circle also tracks the location of the cursor and changes their alpha value based on teh cursor's proximity. The version on the left is made using Processing, the right version is made in HTML 5 canvas.
 
 This project is also the second iteration of another one I have done before. Just like with Mr Oogle, this Processing sketch is the result of me helping out my friend as I attempt to write the code along side her showing by examaple what to do. I know for myself learning by mimmicking is the easiest way to learn and by adding commentary to my actions, why I'm doing this; not that, I hoped would help someone who isn't techincally savvy at all understand the nature of what is required. 
 
