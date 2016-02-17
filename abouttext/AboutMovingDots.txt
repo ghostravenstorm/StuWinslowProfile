@@ -1,9 +1,0 @@
-A simple program that instantiates X number of random circes onto the screen and gives them random parameters for size, color, and movement. Each circle also tracks the location of the cursor and changes their alpha value based on teh cursor's proximity. The version on the left is made using Processing, the right version is made in HTML 5 canvas.
-
-This project is also the second iteration of another one I have done before. Just like with Mr Oogle, this Processing sketch is the result of me helping out my friend as I attempt to write the code along side her showing by examaple what to do. I know for myself learning by mimmicking is the easiest way to learn and by adding commentary to my actions, why I'm doing this; not that, I hoped would help someone who isn't techincally savvy at all understand the nature of what is required. 
-
-There was also another firend who seeked my help with this project which is what the black and white frame with circle is. What friend B had to do was created a canvas of randomly moving cirles too, but it had to be done in HTML 5 Canvas using JavaScript and not Java whic Processing uses. I have never worked in Canvas until I had to help friend B with this project. I basically gave my self a crash course, reading through documentation, and understanding what the Canvas API can do as we worked on it. I certainly learned a lot about how animation works with JavaScript that night.
-
-I also like to use the Processing sketch as an example of how well I can organize my code in the least amount, yet most optimized lines of code possible. This simple sktech also domonstrates how well I understand orangnizing my code through class objects.
-
-This was made in Processing. For more info about Processing check out `Processing.org`.

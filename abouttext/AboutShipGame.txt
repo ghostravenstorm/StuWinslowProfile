@@ -1,6 +1,0 @@
-A program in Processing designed to be a 2D game with a very simple goal. The aesthetics are programmatically generated using Processing's graphic libraries, and the game logic for lose state, win state, movement, enemy behavior, and collision detection were all programmed from scratch.
-
-# Instructions
-- Press 'W' key to move toward your cursor.
-- Press left-click to shoot towards your cursor.
-- Press 'space' to reset the game.
