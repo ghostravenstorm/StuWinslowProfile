@@ -1,0 +1,17 @@
+Not only does my site visually reflect that of a programmer, I also built it programmatically using only JavaScript. I built my own custom framework within JavaScript to handle HTML DOM elements as interface objects which in turn means my site builds itself as the user clicks on things by gernerating its own HTML and CSS at runtime using the predefine framework I've built. I wouldn't design a site like this for someone else as it is a bit heavy on JavaScript memory usage because there are a few memory leaks I'm still debugging, but I set out to prove that I can in fact built a protfolio site that only uses JavaScript to build the HTML and CSS. 
+
+My inspiration for building my site this way came from this website: "musicforprogramming.net".
+
+I learned a lot about how JavaScript works from this project alone since I was experimneting and researching new things I have never done before with JavaScript. The most challenging aspect of building this entirely out of JavaScript wasn't coding the HTML and CSS elements; that's farily easy to do. The challenge was trying to oranganize and optimize the code that creates the HTML and CSS elements into simple data structures that eliminates much copy and paste. 
+
+A rule of thumb I taught myself when it coes to programming is that: if you're having to copy and paste blocks of code and changing only one or two variables, then the code should be in a function or an instantiated object. That's how I set up every HTML element that occurs more than once on my site. After converting many blocks of code to functions and classes, I saved about 300 lines of code.
+
+I have five basic objects:
+> Buttons, Links, Paragraphs, iFrames, and DIV Containers. 
+
+Then I have three data structures that help organize the layout of the objects:
+> Button List, Link List, and the Project Window (which is only instantiated once)
+
+The Button is just a simple <anchor> tag that is typically used for linking to external content. However I repurposed it to function as a custom button that executes a specific function assigned to it when its created. The Button interface holds all the data it needs to know what colors to change when its hovered upon, if it has been clicked on, and it stores data arrays of the functions each button runs and each button knows what group of siblings it belongs to so that when clicked on it runs a function that resets the selection color of its other siblings in a list. The Button List interface is what creates and pairs together buttons that belong in the same category and only one may be selected at a time. 
+
+The challenges I had with buttons was trying to get other functions to run when the <a> is clicked on. The Button class has internal methods that do the 'onclick' event listeners, but that means it can't run external functions because the <a> element that is being clicked on is within the Button class. Outside the class I can't say `ProjectsButton = new Button(...); ProjectsButton.onclick(function(){ <code here> });` because the onclick function doesn't know what an instantiated "Button" is because I made it up so it can't append an event listener to it. How I worked around this was building another internal method into the Button class that takes in extenral functions and their parameters and stores them as variables within the Button interface. Then when the onclick() function runs, it also executes the other functions that the instantiated object has stored. 
