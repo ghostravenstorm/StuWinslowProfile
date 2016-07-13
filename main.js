@@ -1,7 +1,7 @@
 
 //Constants
-	var HIGHLIGHT_FCOLOR = "#003366";
-	var HIGHLIGHT_BCOLOR = "#3399FF";
+	var HIGHLIGHT_FCOLOR = "#000000" /*"#003366"*/;
+	var HIGHLIGHT_BCOLOR = "#00ff00" /*"#3399FF"*/;
 	var PURPLE_COLOR     = "#AA80FF";
 	var PINK_COLOR       = "#FF3399";
 	var GREEN_COLOR      = "#00FF00";
@@ -11,7 +11,7 @@
 	var YELLOW_COLOR     = "#FFFF00";
 	var WHITE_COLOR      = "#FFFFFF";
 	var BLACK_COLOR      = "#000000";
-	var BACKGROUND_COLOR = "#28313e";
+	var BACKGROUND_COLOR = "#262626" /*"#28313e"*/;
 
 //Color Themes
 /*
@@ -627,7 +627,7 @@ function loadAboutMe(container){
 		'http://www.openprocessing.org/user/47167'
 	];
 
-	var text = new PElement(fetchFile("AboutMe.txt"), WHITE_COLOR, null, 500, 200);
+	var text = new PElement(fetchFile("AboutMe.txt"), WHITE_COLOR, null, 500, 300);
 	container.addChild(text.getElem());
 
 	//Creates a data structure for the ExLink interface that holds all the links.
