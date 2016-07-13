@@ -1,4 +1,4 @@
-My name is Stu and I have a passion for programming and problem solving when it comes to designing game logic. My focus is on the backend of systems in game design understanding how the software works with the hardware and how everything interacts with each other. I'm always teaching myself new things about computer science and learning mroe about software engineering.
+My name is Stu and I have a passion for programming and problem solving when it comes to designing game logic. My focus is on the backend of systems in game design understanding how the software works with the hardware and how everything interacts with each other. I'm always teaching myself new things about computer science and learning more about software engineering.
 
 Talents:
 - Code writer for several languages

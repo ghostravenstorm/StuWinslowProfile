@@ -627,7 +627,7 @@ function loadAboutMe(container){
 		'http://www.openprocessing.org/user/47167'
 	];
 
-	var text = new PElement(fetchFile("AboutMe.txt"), WHITE_COLOR, null, 700, 400);
+	var text = new PElement(fetchFile("AboutMe.txt"), WHITE_COLOR, null, 500, 200);
 	container.addChild(text.getElem());
 
 	//Creates a data structure for the ExLink interface that holds all the links.
@@ -660,9 +660,11 @@ function loadProjects(container){
 		"[Muffin Button]",
 		"[Project.Nano]",
 		"[Ship Game]",
+		"[Doubloonacy]"
 	];
 
 	buttonFuncs = [
+		projectContainer,
 		projectContainer,
 		projectContainer,
 		projectContainer,
@@ -677,7 +679,8 @@ function loadProjects(container){
 		[ "Moving Dots", subContainer, 512, 524, fetchFile("AboutMovingDots.txt"), ["http://www.openprocessing.org/sketch/208247/embed/?width=500&height=500&border=true", "MovingDots_htmlCanvas/MovingCircles_Canvas.html"], 2 ],
 		[ "Muffin Button", subContainer, 512, 524, fetchFile("AboutMuffinButton.txt"), ["http://www.openprocessing.org/sketch/185774/embed/?width=500&height=500&border=true"] ],
 		[ "Project.nano", subContainer, 976, 556, fetchFile("AboutProjectNano.txt"), ["ProjectNanoWeb/ProjectNanoWeb.html"] ],
-		[ "Ship Game", subContainer, 512, 524, fetchFile("AboutShipGame.txt"), ["http://www.openprocessing.org/sketch/190500/embed/?width=500&height=500&border=true"] ]
+		[ "Ship Game", subContainer, 512, 524, fetchFile("AboutShipGame.txt"), ["http://www.openprocessing.org/sketch/190500/embed/?width=500&height=500&border=true"] ],
+		[ "Doubloonacy", subContainer, 1512, 2024, fetchFile("AboutDoubloonacy.txt"), ["doubloonacy.html"] ]
 	];
 
 	buttonList = new ButtonList(container, buttonNames, buttonFuncs, buttonParams, BLUE_COLOR, GREEN_COLOR, true);
