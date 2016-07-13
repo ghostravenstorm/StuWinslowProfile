@@ -1,21 +1,7 @@
-Project.nano is a 2D "hacking" game that I made with a team in DIG 4713 Game Design as our final project. The game features a unquie mechanic which the user must use text-based commands to manipulate the environment and solve puzzles to reach the end. 
+Project Nano - 2015
+Developed in: Unity3D 5.2
+Development time: 6 weeks
+Team size: 6
+Role: Assistant programming and design
 
-# Instructions
-- Use tab to toggle Nano's visor to type in commands.
-- Use W, A, S, D to move Nano.
-- Use Q and E to cycle through multiple access points in range.
-
-# Hints
-- The green circle is Nano's detection range and health indicator.
-- Not all nodes that appear in Nano's visor need commands to be typed.
-- The game does not pause when Nano has her visor down. Be quick!
-- Some security nodes have multiple layers.
-- Nano's health goes back to full after each room. 
-
-# Team
-- Richard Angel, Sprite work
-- Daniel Boisselle, Lead programming
-- Alexander Boyd, Sprite work
-- Kyle Townsley, Sprite work
-- Joshua Valljeio, Sound & music
-- Stuart Winslow, Assistant Programming 
+Project.nano is a 2D "hacking" game that features a mechanic which the user must use text-based commands to manipulate the environment and solve puzzles. The player must be able to act quickly as slow typing skills will get you caught by the automatron secruity system you are trying to disable.

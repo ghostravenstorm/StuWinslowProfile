@@ -1,1 +1,7 @@
-A simple program which tracks the mouse cursor and directs Mr. Oogle's eyes towards it. This was part of a class final which our challege was to examine a GIF of what the instructor had made and we has to attempt to copy the behavior and write our own code for it. 
+Mr. Oogle - 2014
+Deveolped in: JavaScript using Processing.js API
+Development time: 2 hours
+Team size: Self
+Role: Programming
+
+Simplistic graphical generation that renders a primitive face where it's eyes will track and follow the mouse cursor. This project is design to help improve programming skills with positioning logic.

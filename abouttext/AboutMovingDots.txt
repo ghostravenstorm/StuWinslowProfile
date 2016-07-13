@@ -1,1 +1,7 @@
-A simple program that instantiates X number of random circes onto the screen and gives them random parameters for size, color, and movement. Each circle also tracks the location of the cursor and changes their alpha value based on teh cursor's proximity. The version on the left is made using Processing, the right version is made in HTML 5 canvas.
+Moving Dots - 2014
+Deveolped in: JavaScript using Processing.js API
+Development time: 2 Hours
+Team size: Self
+Role: Programming
+
+A procedure generation of graphic circles that are given a random color and a random pattern of movement. Each circle also increases in transparnetcy based on proximty to teh mouse curosr. This project is designed to help improve programming skills at handling randomly generated content.

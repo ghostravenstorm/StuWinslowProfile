@@ -11,7 +11,7 @@
 	var YELLOW_COLOR     = "#FFFF00";
 	var WHITE_COLOR      = "#FFFFFF";
 	var BLACK_COLOR      = "#000000";
-	var BACKGROUND_COLOR = "#14191f";
+	var BACKGROUND_COLOR = "#28313e";
 
 //Color Themes
 /*

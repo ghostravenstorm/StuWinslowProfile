@@ -1,1 +1,7 @@
-A simple program with a very simple purpose. Its a button that makes muffins. Each button press generates a random muffin image form a set of 4 at a random location.
+Muffin Button - 2014
+Deveolped in: JavaScript using Processing.js API
+Development time: 30 minutes
+Team size: Self
+Role: Programming
+
+Press the button and it will make muffins. This project is designed to help improve programming skills with the logic behind UI elements such as buttons.

@@ -1,4 +1,7 @@
-A simple HTML adventure game that has a 4-step puzzle mechanic for the player to solve using text commands. The player embarks on a journey to find the treasure hidden in this secret temple. Watch out for traps. Few words and grammatical structures in the dialogs are completely butchered on purpose in order to give the adventure a weird sense of humor.
+The Great Text Adventure - 2014
+Deveolped in: HTML, CSS, and JavaScript
+Development time: 5 hours
+Team size: Self
+Role: Programming and Art
 
-# Hint
-- Push 3
+In this text-based adventure, you are an explorer on the search for epic loot. Navigate through the temple using text commands, solve the puzzles, and discover what treasure lies inside. This project is designed to help improve programming skills at designing logic gates.

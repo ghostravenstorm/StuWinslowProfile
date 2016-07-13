@@ -1,5 +1,6 @@
-My name is Stu, and I'm an aspiring programmer with a passion for software development and video games.
+My name is Stu and I have a passion for programming and problem solving when it comes to designing game logic. My focus is on the backend of systems in game design understanding how the software works with the hardware and how everything interacts with each other. I'm always teaching myself new things about computer science and learning mroe about software engineering.
 
-Many of my projects I pursue out of self interest. I set out with the drive and motivation to try and accoplish something just to see if I can do it. Even though I might fail, I still learn a lot from my attempts which is honestly what I care about the most. When it comes to programming and development, there are many things I teach myself. Its thanks to college that these kind of things are being exposed to me, however I take the steps necessary to learn something I want that otherwise wont be taught in a classroom. I'm currently teaching myself several programming languages and I hope to soon start working on my own game engine in C++.
-
-My goal in the forseeable furture is to bring more development over to Linux and make it a better environment for content creators, average users, and especially gamers. Personally to me I feel like I can call a Linux computer more of my own creation vs Windows and especially Mac since systems like ArchLinux must be built from the ground up using only the kernel. I believe Linux is the way of the future if users want to maintain a secure and private computing experience. The way that the industry is moving in with everything constantly being online and snyc'd to the "cloud" is actually terrifying to me because no user has absolute control over what personal data is being passed over without consent. I fight for freedom and I fight for a free and open internet as well. I strive to teach others how to be technically savvy and how to seize control of their digital lives because we certainly don't want others to control it otherwise.
+Talents:
+- Code writer for several languages
+- Design and technical skills
+- Problem sovler and debugger
