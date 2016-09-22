@@ -1,5 +1,0 @@
-This is a very simple interactive graphic that tracks the mouse cursor and redirects Mr. Oogle's eyes towards it. This was part of a class final which our challege was to examine a GIF of what the instructor had made and we has to attempt to copy the behavior and write our own code for it. 
-
-This version is actaully a second iteration of the project. A friend approched me asking for help with the class I had already taken, so I offered my services. I saw this as a great opportunity to teach my friend the fundamentals code organization and to actaully improve upon my own code here. This second time writing code for the same project I certainly was able to write far more efficently that I had before identifying my own mistakes inteh first one and using them as an example to show my friend.
-
-This was made using Processing. For more info about Processing check out Processing.org.

@@ -1,58 +1,43 @@
-<!DOCTYPE html>
 <html>
-
 <head>
-	<title>StuartWinslow</title>
 	<meta charset="utf-8">
+	<title>Stuart Winslow</title>
 
-	<style>
-		body           {font-family: monospace; font-size: 16px; color: white;}
-		p              {font-family: monospace;}
-		a              {color: inherit; text-decoration: none;}
-		#mainMenu      {margin-top: 35px; margin-left: 35px;}
-		#mainContainer {margin-left: 35px;}
-	</style>
+	<script src="contentConfig.js"></script>
+	<script src="framework.js"></script>
+	<script src="main.js"></script>
 
-
-	<!-- custom script tag that loads this page content -->
-	<script src="main.js" ></script>
-
+	<link rel="stylesheet" href="style.css">
 </head>
+<body onload="main()">
 
-<body onload="loadMainMenu()">
-	<!-- header box -->
-	<div id="mainMenu">
-		
-	<span style="color: #777777">// Main Menu ------------------------------------</span>
+<div id="mainmenu">
 
-	<span style="color: #FF3399; white-space: pre">
+<span style="color: #777777">// Main Menu ------------------------------------</span>
 
-    ////\\\\              ////\\\\
-   /        \            /        \
-  / Stuart   \          /Programmer\
-  \ Winslow  / ////\\\\ \          /
-   \        / /        \ \        /
-    \\\\//// / <span id="resume"></span> \ \\\\////
-    ////\\\\ \          / ////\\\\
-   /        \ \        / /        \
-  /<span id="projects"></span>\ \\\\//// /   Game   \
-  \          / ////\\\\ \ Designer /
-   \        / /        \ \        /
-    \\\\//// / <span id="about"></span>  \ \\\\////
-             \          /
-              \        /
-               \\\\////
-        </span>
-	</div>
+<span style="color: #FF3399; white-space: pre">
+
+  ////\\\\              ////\\\\
+ /        \            /        \
+/ <span id="hextext">Stuart</span>   \          / <span id="resume"></span> \
+\ <span id="hextext">Winslow</span>  / ////\\\\ \          / ////\\\\
+ \        / /        \ \        / /        \
+  \\\\//// /<span id="hextext">Programmer</span>\ \\\\//// / <span id="aboutme"></span>  \
+           \          / ////\\\\ \          /
+            \        / /        \ \        /
+             \\\\//// /<span id="projects"></span>\ \\\\////
+                      \          /
+                       \        /
+                        \\\\////
+</span>
+</div>
+
+<div id="maincontainer">
+	<span style="color: #777777">// <span id="bodyheaderid" >null</span> -----------------------------------------</span>
+	<div id="bodycontent"></div>
+</div>
 
 
-	<!-- body section -->
-	<div id="mainContainer">
-		<span style="color: #777777">// <span id="bodyheaderid" >null</span> ------------------------------------</span>
 
-		<div id="bodyContent"></div>
-
-	</div>
 </body>
-
 </html>

@@ -1,0 +1,15 @@
+body{
+	background-color: #262626;
+	font-family: monospace;
+	font-size: 16px;
+	color: white;
+
+}
+
+#hextext{
+	color: white/*#ffb3d9*/;
+}
+
+#screenshot{
+	margin: 4px;
+}

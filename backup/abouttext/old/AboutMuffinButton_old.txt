@@ -1,9 +1,0 @@
-The Muffin Button is my favorite Processing sketch just because of how simple and amusing it is. What does it do? 
-
-It. Makes. Muffins. 
-
-Have you ever had that moment in the morning where you just woke up and you're hungry, so you want a simple button to press that makes a muffin? Unfortunately I am not capable of such mad science... yet... but I wanted to do something close to the concept so I coded a muffin button. The inspiration behind muffin button came from a video series on YouTube called DragonBall Z Abridged where the main character, Goku, is on a space ship which has a muffin button. 
-
-At the time when I was playing around with Processing learning more about it since it was required to be used in one of my classes, I wanted to explore more of its functions and see if I can get external images to be pasted onto the canvas. This was a test to see if I can code a function to bring in external images to the Processing API so that I can apply it to 2D games. Unfortunately I never had the opportunity to images into Ship Game, which is why every object in that game is a circle; even the background. Ship Game had other technical troubleshooting I had attend to first before graphics.
-
-This was made in Processing. For more info about Processing check out `Processing.org`.

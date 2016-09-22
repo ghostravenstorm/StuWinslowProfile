@@ -1,4 +1,4 @@
-Ship Game - 2014
+Ship Game -  November 2014
 Deveolped in: JavaScript using Processing.js API
 Development time: 8 hours
 Team size: Self

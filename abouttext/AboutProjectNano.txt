@@ -1,7 +1,7 @@
-Project Nano - 2015
-Developed in: Unity3D 5.2
+Project Nano - November 2015
+Developed in: Unity3D 5.2.1
 Development time: 6 weeks
 Team size: 6
-Role: Assistant programming and design
+Role: Designer and second-hand programmer
 
 Project.nano is a 2D "hacking" game that features a mechanic which the user must use text-based commands to manipulate the environment and solve puzzles. The player must be able to act quickly as slow typing skills will get you caught by the automatron secruity system you are trying to disable.

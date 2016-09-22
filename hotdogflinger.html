@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hotdog Flinger (WIP)</title>
+	<script src="framework.js"></script>
+	<link type="text/css" rel="stylesheet" href="style.css">
+	<script>
+		function load(){
+			var returnButton = new Button("[Return Home]", BLUE_COLOR, document.getElementById("return"));
+			returnButton.addFunction(returnFunc);
+
+			TextBlock(fetchFile("AboutHotdogFlinger.txt"), WHITE_COLOR, document.getElementById("textcell"), 400);
+
+			function returnFunc(){
+				window.location.href = 'index.html';
+			}
+		}
+	</script>
+</head>
+<body onload="load()">
+
+<span id="return"></span>
+
+<table >
+	<tr>
+		<td id="textcell" valign="top"></td>
+		<td>
+			<img id="screenshot" src="hotdogflinger/screenshots/Screenshot1.jpg" width="500" /> <br>
+			<img id="screenshot" src="hotdogflinger/screenshots/Screenshot2.jpg" width="500" /> 
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
+

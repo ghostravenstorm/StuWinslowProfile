@@ -1,7 +1,0 @@
-The Great Text Adventure - 2014
-Deveolped in: HTML, CSS, and JavaScript
-Development time: 5 hours
-Team size: Self
-Role: Programming and Art
-
-In this text-based adventure, you are an explorer on the search for epic loot. Navigate through the temple using text commands, solve the puzzles, and discover what treasure lies inside. This project is designed to help improve programming skills at designing logic gates.

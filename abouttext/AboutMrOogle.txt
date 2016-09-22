@@ -1,7 +1,0 @@
-Mr. Oogle - 2014
-Deveolped in: JavaScript using Processing.js API
-Development time: 2 hours
-Team size: Self
-Role: Programming
-
-Simplistic graphical generation that renders a primitive face where it's eyes will track and follow the mouse cursor. This project is design to help improve programming skills with positioning logic.

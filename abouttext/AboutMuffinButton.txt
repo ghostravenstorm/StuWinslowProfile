@@ -1,7 +1,0 @@
-Muffin Button - 2014
-Deveolped in: JavaScript using Processing.js API
-Development time: 30 minutes
-Team size: Self
-Role: Programming
-
-Press the button and it will make muffins. This project is designed to help improve programming skills with the logic behind UI elements such as buttons.

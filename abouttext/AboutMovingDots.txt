@@ -1,7 +1,0 @@
-Moving Dots - 2014
-Deveolped in: JavaScript using Processing.js API
-Development time: 2 Hours
-Team size: Self
-Role: Programming
-
-A procedure generation of graphic circles that are given a random color and a random pattern of movement. Each circle also increases in transparnetcy based on proximty to teh mouse curosr. This project is designed to help improve programming skills at handling randomly generated content.

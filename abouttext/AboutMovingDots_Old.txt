@@ -1,1 +1,0 @@
-A simple program that instantiates X number of random circes onto the screen and gives them random parameters for size, color, and movement. Each circle also tracks the location of the cursor and changes their alpha value based on teh cursor's proximity. The version on the left is made using Processing, the right version is made in HTML 5 canvas.

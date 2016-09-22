@@ -1,0 +1,7 @@
+Hotdog Flinger - March 2016
+Developed in: Unity3D 5.2.1
+Development time: 7 weeks
+Team size: 4
+Role: Programmer
+
+VR game, currently work in progress, designed in Unity using the Google Cardboard API targeted for Android devices which features use of Google's voice recognition API to issue commands. Goal of the game is to shoot BBQ out of the sky with your laser eyes while commanding the catapult with your voice. 
