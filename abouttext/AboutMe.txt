@@ -1,6 +1,5 @@
-Writing code and working on the technical backend is what I am best at. What I currently do now started out as a hobby learning how to write mods for Minecraft and addons for other titles. I currently attend University of Central Florida seeking a BA in Digital Media: Game Design which I hope to turn into a full career. 
+Writing code and working on the technical backend is what I am best at. What I currently do now started out as a hobby learning how to write mods for Minecraft and addons for other titles. I currently attend University of Central Florida seeking a BA in Digital Media: Game Design which I hope to turn into a full career.
 
 Talents:
 - Code anaysis, breakdown, and implementation
 - Technical writing and documentation
-- Hardware nutcase

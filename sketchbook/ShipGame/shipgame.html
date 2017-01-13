@@ -1,0 +1,37 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Doubloonacy</title>
+	<link type="text/css" rel="stylesheet" href="../../style.css">
+	<script src="../../framework.js"></script>
+	<script>
+		function onLoad(){
+			var returnButton = new Button("[Return Home]", BLUE_COLOR, document.getElementById("return"));
+			returnButton.addFunction(returnFunc);
+
+			TextBlock(fetchFile("AboutShipGame.txt"), WHITE_COLOR, document.getElementById("textcell"), 400);
+
+			IFrame(512, 524, "http://www.openprocessing.org/sketch/190500/embed/?width=500&height=500&border=true", document.getElementById("previewcell"));
+
+			function returnFunc(){
+				window.location.href = 'index.html';
+			}
+
+		}
+	</script>
+</head>
+<body onload="onLoad()">
+
+<span id="return"></span>
+
+<table >
+	<tr>
+		<td id="textcell" valign="top"></td>
+		<td id="previewcell">
+
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>

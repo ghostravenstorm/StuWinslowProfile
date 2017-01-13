@@ -3,8 +3,9 @@ const HIGHLIGHT_FCOLOR = "#000000";
 const HIGHLIGHT_BCOLOR = "#00FF00";
 const BACKGROUND_COLOR = "#262626";
 const BLUE_COLOR       = "#00BBCC";
+const ORANGE_COLOR     = "#C68C4B"
 const PURPLE_COLOR     = "#AA80FF";
-const WHITE_COLOR      = "#FFFFFF";
+const WHITE_COLOR      = "#ABB2BF";
 const BLACK_COLOR      = "#000000";
 const GRAY_COLOR       = "#777777";
 
@@ -14,40 +15,47 @@ const DEFAULT_COLOR = WHITE_COLOR;
 
 function Button(label, normalColor, parentNode, address){
 
-	var element = document.createElement("A");
+	this.element = document.createElement("A");
 
 	var func;
 	var param;
 
-	element.style.cursor = "pointer";
-	element.appendChild(document.createTextNode(label));
-	parentNode.appendChild(element);
+	this.element.style.cursor = "pointer";
+	this.element.appendChild(document.createTextNode(label));
+	parentNode.appendChild(this.element);
 
 	if(!normalColor)
 		normalColor = DEFAULT_COLOR;
-	
-	element.style.color = "inherit";
-	element.style.color = normalColor;
-	element.style.textDecoration = "none";
+
+	this.element.style.color = "inherit";
+	this.element.style.color = normalColor;
+	this.element.style.textDecoration = "none";
 
 	if(address){
-		element.setAttribute('href', address);
-		element.setAttribute('target', '_blank');
-	}	
+		this.element.setAttribute('href', address);
+		this.element.setAttribute('target', '_blank');
+	}
 
 
-	element.onclick = function(){
+	this.element.onclick = function(){
 		buttonFunction();
 	}
 
-	element.onmouseenter = function(){
+	this.element.onmouseenter = function(){
 		this.style.color = HIGHLIGHT_FCOLOR;
 		this.style.background = HIGHLIGHT_BCOLOR;
-	}	
+		// for( var i = 0; i < this.linkedChildren.length; i++){
+		// 	this.linkedChildren[i].element.onmouseenter();
+		// }
 
-	element.onmouseleave = function(){
+	}
+
+	this.element.onmouseleave = function(){
 		this.style.color = normalColor;
 		this.style.background = "transparent";
+		// for( var i = 0; i < this.linkedChildren.length; i++){
+		// 	this.linkedChildren[i].element.onmouseleave();
+		// }
 	}
 
 	var buttonFunction = function(){
@@ -61,8 +69,9 @@ function Button(label, normalColor, parentNode, address){
 	}
 
 	this.addTo = function(parentNode){
-		parentNode.appendChild(element);
+		parentNode.appendChild(this.element);
 	}
+
 }
 
 function TextBlock(text, color, parentNode, width, height){
@@ -95,7 +104,7 @@ function Container(id, parentNode, width, height){
 
 	if(parentNode)
 		parentNode.appendChild(element);
-	
+
 	if(width)
 		element.style.width = width.toString()+"px";
 	if(height)
@@ -126,6 +135,7 @@ function Container(id, parentNode, width, height){
 	}
 }
 
+// Depreciated.
 function IFrame(width, height, address, parentNode){
 	if(!address)
 		address = "_blank";
@@ -156,7 +166,7 @@ function fetchFile(file){
 
 	//concatenate file path with file name
 	file = "abouttext/"+file;
-	
+
 	var data = new XMLHttpRequest();
 	var textData;
 

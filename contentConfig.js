@@ -3,20 +3,31 @@ var resumeLink = "https://docs.google.com/document/d/1QyKXXZwgNdCnf0VfyVlawiNG5h
 var emailLink = "mailto:stu.winslow@outlook.com";
 
 var projectList = [
-	"Ship Game",
-	"Project Nano",
-	"Hotdog Flinger (WIP)",
 	"Doubloonacy",
-	"Portal Chaos"
+	"Hotdog Flinger (WIP)",
+	"Agent Silhouette",
+	"Portal Chaos (WIP)"
 ];
 
 var projectLinks = [
-	"shipgame.html",
-	"projectnano.html",
-	"hotdogflinger.html",
-	"doubloonacy.html",
-	"portalchaos.html"
+	"projects/Doubloonacy/Doubloonacy.html",
+	"projects/HotdogFlinger/HotdogFlinger.html",
+	"projects/AgentSilhouette/AgentSilhouette.html", // TODO: Make page.
+	"projects/PortalChaos/PortalChaos.html"
+];
 
+var sketchbookList = [
+	"AllySelector",
+	//"Ship Game",
+	"Lua Array List Class",
+	"Lua Recurively Search Unordered List"
+];
+
+var sketchbookLinks = [
+	"sketchbook/AllySelector/AllySelector.html",
+	//"sketchbook/ShipGame/shipgame.html"
+	"sketchbook/LuaArrayListClass.html",
+	"sketchbook/RecursiveSearchUnordered.html"
 ];
 
 var linkList = [

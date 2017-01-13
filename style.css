@@ -2,12 +2,26 @@ body{
 	background-color: #262626;
 	font-family: monospace;
 	font-size: 16px;
-	color: white;
+	color: #ABB2BF;
 
 }
 
+table{
+	font-size: 16px;
+	height:90%;
+}
+
+#stuff{
+	margin-left:50px;
+	margin-right:50px;
+	margin-top:;
+	margin-bottom:30px;
+	height:100%;
+	overflow:auto;
+}
+
 #hextext{
-	color: white/*#ffb3d9*/;
+	color: #ABB2BF/*#ffb3d9*/;
 }
 
 #screenshot{
