@@ -1,0 +1,522 @@
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Pastry Panzer Panic - Techincal and Programming Documentation</title>
+   <!-- <link href='//fonts.googleapis.com/css?family=Source Code Pro' rel='stylesheet'> -->
+   <style>
+      body{
+         /*font-family: 'Source Code Pro';*/
+         font-family: 'Consolas';
+         font-size: 14px;
+         margin-left: 20px;
+         margin-right: 20px;
+      }
+      h3{
+         background-color: #CCCCCC;
+      }
+      a:link{
+         color: inherit;
+         background-color: #CFE2F3;
+         text-decoration: none;
+      }
+      a:visited{
+         color: inherit;
+         background-color: #CFE2F3;
+         text-decoration: none;
+      }
+      a:hover{
+         color: inherit;
+         background-color: #CCCCCC;
+         text-decoration: underline;
+      }
+      ul{
+         padding-left: 16px;
+      }
+      ul li{
+         /*margin: 5px;*/
+      }
+      li.class_subhead{
+         margin-top: 10px;
+         font-weight: bold;
+      }
+      li.funchead{
+         margin-top: 10px;
+      }
+      li.func_subhead{
+         margin-top: 10px;
+      }
+      span.enum{
+         display: inline;
+         background-color: #B6D7A8;
+         font-weight: bold;
+      }
+      span.blueprint{
+         dispaly: inline;
+         background-color: #9FC5E8;
+         font-weight: bold;
+      }
+      span.class_subhead{
+         font-weight: bold;
+      }
+      span.funchead{
+         dispaly: inline;
+         background-color: #B4A7D6;
+         font-weight: bold;
+      }
+      span.func_subhead{
+         font-weight: bold;
+      }
+   </style>
+
+</head>
+<body>
+   <h1>Pastry Panzer Panic - Technical and Programming Documention</h1>
+   <hr>
+   <br>
+   <h2> > Blueprint and Programming Outline < </h2>
+
+<!-- Enumerables -->
+   <h3>Enumerables</h3>
+
+   <!-- Tank State -->
+   <ul>
+   <li><span class="enum">Tank State</span></li>
+      <ul>
+      <li>Active</li>
+      <li>Inactive</li>
+      <li>Destroyed</li>
+      <li>Invulnerable</li>
+      </ul>
+   </ul>
+<!-- End enumerables -->
+
+   <br>
+
+   <h3>Tank Class Abilities</h3>
+
+<!-- Tank Class Ability -->
+
+   <h4><span class="blueprint" id="TankClassAbility">Tank Class Ability</span></h4>
+
+   <!-- Class remarks -->
+   <ul>
+      <li class="class_subhead">Remarks</li>
+      <ul>
+         <li>Root blueprint class that all class ability components are based on.</li>
+      </ul>
+   </ul>
+
+   <!-- Parent class -->
+   <ul>
+      <li class="class_subhead">Parent Class</li>
+      <ul>
+         <li>Actor Component</li>
+      </ul>
+   </ul>
+
+   <!-- Interfaces -->
+   <ul>
+      <li class="class_subhead">Interfaces</li>
+      <ul>
+         <li>None</li>
+      </ul>
+   </ul>
+
+   <!-- Class properties -->
+   <ul>
+      <li class="class_subhead">Properties</li>
+      <ul>
+         <li>Ability Name</li>
+      </ul>
+   </ul>
+
+   <!-- Class functions -->
+   <ul>
+      <li class="class_subhead">Functions/Methods</li>
+
+      <!-- On Class Ability Fire -->
+      <ul>
+         <li class="funchead"><span class="funchead">On Class Ability Fire (Virtual)</span></li>
+
+         <!-- Function remarks -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Remarks</span></li>
+            <ul>
+               <li>Main function that is used to activate this class ability when called.</li>
+            </ul>
+         </ul>
+
+         <!-- Function parameters -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Parameters</span></li>
+            <ul>
+               <li>Owning Tank (of type Generic Tank)</li>
+            </ul>
+         </ul>
+
+         <!-- Function sequence -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Sequence</span></li>
+            <ul>
+               <li>Pure virtual; no implementation.</li>
+            </ul>
+         </ul>
+
+      </ul>
+   </ul>
+
+<!-- End Tank Class Ability -->
+
+   <br>
+
+<!-- Light Tank Class Ability -->
+   <h4><span class="blueprint ">Light Tank Class Ability</span></h4>
+
+   <!-- Class remarks -->
+   <ul>
+      <li class="class_subhead">Remarks</li>
+      <ul>
+         <li> Special weapon unique to light tanks classes.</li>
+      </ul>
+   </ul>
+
+   <!-- Parent class -->
+   <ul>
+      <li class="class_subhead">Parent Class</li>
+      <ul>
+         <li><a href="#TankClassAbility">Tank Class Ability</a></li>
+      </ul>
+   </ul>
+
+   <!-- Interfaces -->
+   <ul>
+      <li class="class_subhead">Interfaces</li>
+      <ul>
+         <li>None</li>
+      </ul>
+   </ul>
+
+   <!-- Class properties -->
+   <ul>
+      <li class="class_subhead">Properties</li>
+      <ul>
+         <li>Ability Name (Inherited)</li>
+         <ul>
+            <li>"Speed Boost"</li>
+         </ul>
+      </ul>
+   </ul>
+
+   <!-- Class functions -->
+   <ul>
+      <li class="class_subhead">Functions/Methods</li>
+
+      <!-- On Class Ability Fire -->
+      <ul>
+         <li class="funchead"><span class="funchead">On Class Ability Fire (Inherited, Override)</span></li>
+
+         <!-- Function remarks -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Remarks</span></li>
+            <ul>
+               <li>Main function that is used to activate this class ability when called.</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function parameters -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Parameters</span></li>
+            <ul>
+               <li>Owning Tank (of type Generic Tank)</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function sequence -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Sequence</span></li>
+            <ul>
+               <li>Acquire the Engine Component from Owning Tank (Inherited) and increase current speed by X% for T seconds ignoring maximum speed limits.</li>
+            </ul>
+         </ul>
+
+      </ul>
+   </ul>
+
+<!-- End Light Tank Class Ability -->
+
+<br>
+
+<!-- Medium Tank Class Ability -->
+   <h4><span class="blueprint ">Medium Tank Class Ability</span></h4>
+
+   <!-- Class remarks -->
+   <ul>
+      <li class="class_subhead">Remarks</li>
+      <ul>
+         <li>Special wepon unqiue to medium tank classes</li>
+      </ul>
+   </ul>
+
+   <!-- Parent class -->
+   <ul>
+      <li class="class_subhead">Parent Class</li>
+      <ul>
+         <li><a href="#TankClassAbility">Tank Class Ability</a></li>
+      </ul>
+   </ul>
+
+   <!-- Interfaces -->
+   <ul>
+      <li class="class_subhead">Interfaces</li>
+      <ul>
+         <li>None</li>
+      </ul>
+   </ul>
+
+   <!-- Class properties -->
+   <ul>
+      <li class="class_subhead">Properties</li>
+      <ul>
+         <li>Ability Name (Inherited)</li>
+         <ul>
+            <li>"Sticky Grenade"</li>
+         </ul>
+         <li>Explosion Radius</li>
+      </ul>
+   </ul>
+
+   <!-- Class functions -->
+   <ul>
+      <li class="class_subhead">Functions/Methods</li>
+
+      <!-- On Class Ability Fire -->
+      <ul>
+         <li class="funchead"><span class="funchead">On Class Ability Fire (Inherited, Override)</span></li>
+
+         <!-- Function remarks -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Remarks</span></li>
+            <ul>
+               <li>Main function that is used to activate this class ability when called.</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function parameters -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Parameters</span></li>
+            <ul>
+               <li>Owning Tank (of type Generic Tank)</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function sequence -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Sequence</span></li>
+            <ul>
+               <li>Acquire the <a href="#GunModActor">Gun Mod Actor</a> component from Owning Tank (Inherited) and launch a <a href="#StickGrenadeProjectile">Sticky Grenade Projectile</a> from Projectile Spawn location.</li>
+            </ul>
+         </ul>
+
+      </ul>
+   </ul>
+
+<!-- End Medium Tank Class Ability -->
+
+<br>
+
+<!-- Heavy Tank Class Ability -->
+   <h4><span class="blueprint ">Heavy Tank Class Ability</span></h4>
+
+   <!-- Class remarks -->
+   <ul>
+      <li class="class_subhead">Remarks</li>
+      <ul>
+         <li>Special wepon unqiue to heavy tank classes</li>
+      </ul>
+   </ul>
+
+   <!-- Parent class -->
+   <ul>
+      <li class="class_subhead">Parent Class</li>
+      <ul>
+         <li><a href="#TankClassAbility">Tank Class Ability</a></li>
+      </ul>
+   </ul>
+
+   <!-- Interfaces -->
+   <ul>
+      <li class="class_subhead">Interfaces</li>
+      <ul>
+         <li>None</li>
+      </ul>
+   </ul>
+
+   <!-- Class properties -->
+   <ul>
+      <li class="class_subhead">Properties</li>
+      <ul>
+         <li>Ability Name (Inherited)</li>
+         <ul>
+            <li>"Gravity Trap"</li>
+         </ul>
+         <li>Gravity Field Radius</li>
+         <li>Gravity Magnitude</li>
+      </ul>
+   </ul>
+
+   <!-- Class functions -->
+   <ul>
+      <li class="class_subhead">Functions/Methods</li>
+
+      <!-- On Class Ability Fire -->
+      <ul>
+         <li class="funchead"><span class="funchead">On Class Ability Fire (Inherited, Override)</span></li>
+
+         <!-- Function remarks -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Remarks</span></li>
+            <ul>
+               <li>Main function that is used to activate this class ability when called.</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function parameters -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Parameters</span></li>
+            <ul>
+               <li>Owning Tank (of type Generic Tank)</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function sequence -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Sequence</span></li>
+            <ul>
+               <li>Acquire the <a href="#GunModActor">Gun Mod Actor</a> component from Owning Tank (Inherited) and launch a <a href="#GravityTrapProjectile">Gravity Trap Projectile</a> from Projectile Spawn location.</li>
+            </ul>
+         </ul>
+
+      </ul>
+   </ul>
+
+<!-- End Heavy Tank Class Ability -->
+
+<br>
+
+<h3>Tank Mods</h3>
+
+<!-- Gun Mod Actor -->
+   <h4><span class="blueprint" id="GunModActor">Gun Mod Actor</span></h4>
+
+   <!-- Class remarks -->
+   <ul>
+      <li class="class_subhead">Remarks</li>
+      <ul>
+         <li>Root blueprint class that all Gun Mods are based and provides a stadardized public interface for inter-object communications.</li>
+      </ul>
+   </ul>
+
+   <!-- Parent class -->
+   <ul>
+      <li class="class_subhead">Parent Class</li>
+      <ul>
+         <li>Actor</li>
+      </ul>
+   </ul>
+
+   <!-- Interfaces -->
+   <ul>
+      <li class="class_subhead">Interfaces</li>
+      <ul>
+         <li>None</li>
+      </ul>
+   </ul>
+
+   <!-- Class properties -->
+   <ul>
+      <li class="class_subhead">Properties</li>
+      <ul>
+         <li>Damage</li>
+         <li>Max Ammo</li>
+         <li>Current Ammo</li>
+         <li>Fire Rate</li>
+         <li>Reload Time</li>
+         <li>Reload Start Time</li>
+         <li>Is Reloading</li>
+         <li>Is Cooling Down</li>
+         <li>Is Auto Firing</li>
+         <li>Widget</li>
+      </ul>
+   </ul>
+
+   <!-- Class functions -->
+   <ul>
+      <li class="class_subhead">Functions/Methods</li>
+
+      <!-- Destroy Self -->
+      <ul>
+         <li class="funchead"><span class="funchead">Destroy Self</span></li>
+
+         <!-- Function remarks -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Remarks</span></li>
+            <ul>
+               <li>Main function that is used to activate this class ability when called.</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function parameters -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Parameters</span></li>
+            <ul>
+               <li>Owning Tank (of type Generic Tank)</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function sequence -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Sequence</span></li>
+            <ul>
+               <li>Remove this Widget component from the player's view port then destroy this component.</li>
+            </ul>
+         </ul>
+
+      </ul>
+      <!-- End Destroy Self -->
+
+      <!-- Fire Weapon -->
+      <ul>
+         <li class="funchead"><span class="funchead">Fire Weapon (Virtual)</span></li>
+
+         <!-- Function remarks -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Remarks</span></li>
+            <ul>
+               <li>Main function that is used to activate this class ability when called.</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function parameters -->
+         <!-- <ul>
+            <li class="func_subhead"><span class="func_subhead">Parameters</span></li>
+            <ul>
+               <li>Owning Tank (of type Generic Tank)</li>
+            </ul>
+         </ul> -->
+
+         <!-- Function sequence -->
+         <ul>
+            <li class="func_subhead"><span class="func_subhead">Sequence</span></li>
+            <ul>
+               <li>Pure virtual; no implementation.</li>
+            </ul>
+         </ul>
+
+      </ul>
+      <!-- End Fire Weapon -->
+
+   </ul>
+<!-- End Gun Mod Actor -->
+
+</body>
+</html>
