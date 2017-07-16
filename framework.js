@@ -36,6 +36,9 @@ function Button(label, normalColor, parentNode, address){
 		this.element.setAttribute('target', '_blank');
 	}
 
+	this.setLabel = function(text){
+		this.element.innerHTML = text;
+	}
 
 	this.element.onclick = function(){
 		buttonFunction();

@@ -1,6 +1,6 @@
 
 function main(){
-	setFormat();
+	//setFormat();
 
 	var resumeButton = new Button("[Resume]", BLUE_COLOR, document.getElementById("resume"), resumeLink);
 	var projectsButton = new Button("[Projects]", BLUE_COLOR, document.getElementById("projects"));
@@ -9,21 +9,27 @@ function main(){
 	var sketchbook_B = new Button("book]", BLUE_COLOR, document.getElementById("sketchbook_B"))
 
 
-	projectsButton.addFunction(projectsButtonFunction);
-	aboutmeButton.addFunction(aboutmeButtonFunction);
-	sketchbook_A.addFunction(onSketchbook);
-	sketchbook_B.addFunction(onSketchbook);
+	projectsButton.addFunction(OnProjectsBtn);
+	aboutmeButton.addFunction(onAboutMeBtn);
+	sketchbook_A.addFunction(onSketchbookBtn);
+	sketchbook_B.addFunction(onSketchbookBtn);
+
+	// Load a default section.
+	onAboutMeBtn();
 }
 
 // Depreciated.
-function setFormat(){
-	document.body.style.fontFamily = "monospace";
-	document.body.style.fontSize = "16px";
-	document.body.style.color = WHITE_COLOR;
-	document.body.style.backgroundColor = BACKGROUND_COLOR;
-}
+// function setFormat(){
+// 	document.body.style.fontFamily = "monospace";
+// 	document.body.style.fontSize = "16px";
+// 	document.body.style.color = WHITE_COLOR;
+// 	document.body.style.backgroundColor = BACKGROUND_COLOR;
+// }
 
-function aboutmeButtonFunction(){
+// -- Button Event functions
+// ---------------------------------------------------------------------------------------------------------------------
+
+function onAboutMeBtn(){
 	cleanUpChildNodes(document.getElementById("bodycontent"));
 	cleanUpChildNodes(document.getElementById("stuff"));
 	var aboutmeContainer = new Container("aboutmeContainer", document.getElementById("bodycontent"));
@@ -44,7 +50,7 @@ function aboutmeButtonFunction(){
 	var email = new Button("[stu.winslow@outlook.com]", PURPLE_COLOR, aboutmeContainer, emailLink);
 }
 
-function projectsButtonFunction(){
+function OnProjectsBtn(){
 	cleanUpChildNodes(document.getElementById("bodycontent"));
 	cleanUpChildNodes(document.getElementById("stuff"));
 	var projectContainer = new Container("projectContainer", document.getElementById("bodycontent"));
@@ -77,7 +83,7 @@ function projectsButtonFunction(){
 	}
 }
 
-function onSketchbook(){
+function onSketchbookBtn(){
 	cleanUpChildNodes(document.getElementById("bodycontent"));
 	cleanUpChildNodes(document.getElementById("stuff"));
 	var sketchbookContainer = new Container("sketchbookContainer", document.getElementById("bodycontent"));

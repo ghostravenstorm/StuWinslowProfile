@@ -3,39 +3,39 @@ var resumeLink = "https://docs.google.com/document/d/1QyKXXZwgNdCnf0VfyVlawiNG5h
 var emailLink = "mailto:stu.winslow@outlook.com";
 
 var projectList = [
+	"AllySelector",
 	"Doubloonacy",
-	"Hotdog Flinger (WIP)",
+	"Hotdog Flinger",
 	"Agent Silhouette",
-	"Portal Chaos (WIP)"
+	"Portal Chaos"
 ];
 
 var projectLinks = [
+	"projects/AllySelector/AllySelector.html",
 	"projects/Doubloonacy/Doubloonacy.html",
 	"projects/HotdogFlinger/HotdogFlinger.html",
-	"projects/AgentSilhouette/AgentSilhouette.html", // TODO: Make page.
+	"projects/AgentSilhouette/AgentSilhouette.html",
 	"projects/PortalChaos/PortalChaos.html"
 ];
 
 var sketchbookList = [
-	"AllySelector",
 	//"Ship Game",
-	"Lua Array List Class",
-	"Lua Recurively Search Unordered List"
+	"Lua: Array List",
+	"Lua: Unordered List Recursive Search"
 ];
 
 var sketchbookLinks = [
-	"sketchbook/AllySelector/AllySelector.html",
-	//"sketchbook/ShipGame/shipgame.html"
+	//"sketchbook/ShipGame/shipgame.html",
 	"sketchbook/LuaArrayListClass.html",
 	"sketchbook/RecursiveSearchUnordered.html"
 ];
 
 var linkList = [
-	"LinkedIn",
-	"Itch.io"
+	"LinkedIn"
+	//"Itch.io"
 ];
 
 var linkLinkAddress = [
-	"https://www.linkedin.com/pub/stuart-winslow/58/4b1/864",
-	"http://ghostravenstorm.itch.io/"
+	"https://www.linkedin.com/in/stuartwinslow"
+	//"http://ghostravenstorm.itch.io/"
 ];
