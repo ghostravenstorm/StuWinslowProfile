@@ -9,7 +9,7 @@ var projectList = [
 	"Agent Silhouette",
 	"Buffet Blast",
 	"Hotdog Flinger",
-	//"Portal Chaos",
+	"Portal Chaos",
 	"Doubloonacy"
 ];
 
@@ -19,7 +19,7 @@ var projectLinks = [
 	"projects/AgentSilhouette/AgentSilhouette.html",
 	"projects/buffetblast/buffetblast.html",
 	"projects/HotdogFlinger/HotdogFlinger.html",
-	//"projects/PortalChaos/PortalChaos.html",
+	"projects/PortalChaos/PortalChaos.html",
 	"projects/Doubloonacy/Doubloonacy.html"
 ];
 
