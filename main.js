@@ -2,7 +2,7 @@
 function main(){
 	//setFormat();
 
-	var resumeButton = new Button("[Resume]", BLUE_COLOR, document.getElementById("resume"), resumeLink);
+	var resumeButton = new Button("[Resume]", PINK_COLOR, document.getElementById("resume"), resumeLink);
 	var projectsButton = new Button("[Projects]", BLUE_COLOR, document.getElementById("projects"));
 	var aboutmeButton = new Button("[About]", BLUE_COLOR, document.getElementById("aboutme"));
 	var sketchbook_A = new Button("[Sketch", BLUE_COLOR, document.getElementById("sketchbook_A"))
@@ -32,22 +32,34 @@ function main(){
 function onAboutMeBtn(){
 	cleanUpChildNodes(document.getElementById("bodycontent"));
 	cleanUpChildNodes(document.getElementById("stuff"));
-	var aboutmeContainer = new Container("aboutmeContainer", document.getElementById("bodycontent"));
+
+	var frame = document.createElement("IFRAME");
+	frame.setAttribute('width', "650");
+	frame.setAttribute('height', "250");
+	frame.setAttribute('frameborder', 'no');
+	frame.setAttribute('scrolling', 'no');
+	frame.setAttribute('src', 'aboutme.html');
+	//frame.style.height = document.body.scrollHeight;
+	//console.log(document.body.height);
+
+	document.getElementById("bodycontent").appendChild(frame);
+
+	// var aboutmeContainer = new Container("aboutmeContainer", document.getElementById("bodycontent"));
 	document.getElementById("bodyheaderid").innerHTML = "About Me ";
 
-	var text = new TextBlock(fetchFile("AboutMe.txt"), WHITE_COLOR, aboutmeContainer, 500, 300);
-
-	var list = [];
-
-	for(var i = 0; i < linkList.length; i++){
-		var link = new Button("["+linkList[i]+"]", ORANGE_COLOR, aboutmeContainer, linkLinkAddress[i]);
-		list.push(link);
-		addSpace(aboutmeContainer);
-	}
-
-	addBreak(aboutmeContainer);
-
-	var email = new Button("[stu.winslow@outlook.com]", PURPLE_COLOR, aboutmeContainer, emailLink);
+	// var text = new TextBlock(fetchFile("AboutMe.txt"), WHITE_COLOR, aboutmeContainer, 500, 300);
+	//
+	// var list = [];
+	//
+	// for(var i = 0; i < linkList.length; i++){
+	// 	var link = new Button("["+linkList[i]+"]", ORANGE_COLOR, aboutmeContainer, linkLinkAddress[i]);
+	// 	list.push(link);
+	// 	addSpace(aboutmeContainer);
+	// }
+	//
+	// addBreak(aboutmeContainer);
+	//
+	// var email = new Button("[stu.winslow@outlook.com]", PURPLE_COLOR, aboutmeContainer, emailLink);
 }
 
 function OnProjectsBtn(){

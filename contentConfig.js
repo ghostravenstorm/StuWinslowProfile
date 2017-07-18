@@ -1,21 +1,26 @@
 
-var resumeLink = "https://docs.google.com/document/d/1QyKXXZwgNdCnf0VfyVlawiNG5huBvqn1bOdrUOJO1yY/edit?usp=sharing";
+//var resumeLink = "https://docs.google.com/document/d/1QyKXXZwgNdCnf0VfyVlawiNG5huBvqn1bOdrUOJO1yY/edit?usp=sharing";
+var resumeLink = "StuartWinslowCV_2017-07-17.docx";
 var emailLink = "mailto:stu.winslow@outlook.com";
 
 var projectList = [
 	"AllySelector",
-	"Doubloonacy",
-	"Hotdog Flinger",
+	"NanoTimers",
 	"Agent Silhouette",
-	"Portal Chaos"
+	"Buffet Blast",
+	"Hotdog Flinger",
+	//"Portal Chaos",
+	"Doubloonacy"
 ];
 
 var projectLinks = [
 	"projects/AllySelector/AllySelector.html",
-	"projects/Doubloonacy/Doubloonacy.html",
-	"projects/HotdogFlinger/HotdogFlinger.html",
+	"projects/nanotimers/nanotimers.html",
 	"projects/AgentSilhouette/AgentSilhouette.html",
-	"projects/PortalChaos/PortalChaos.html"
+	"projects/buffetblast/buffetblast.html",
+	"projects/HotdogFlinger/HotdogFlinger.html",
+	//"projects/PortalChaos/PortalChaos.html",
+	"projects/Doubloonacy/Doubloonacy.html"
 ];
 
 var sketchbookList = [
