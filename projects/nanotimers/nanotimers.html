@@ -1,0 +1,92 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Nano Timers</title>
+	<link type="text/css" rel="stylesheet" href="../../style.css">
+   <script src="../../framework.js"></script>
+	<script>
+
+      // Global variables for tracking button states.
+
+		var codeBtn_A = {
+			lable:        "CountdownTimer.cs",
+			address:      "http://pastebin.com/embed_iframe/XfAzZtc1"
+		}
+
+		function onLoad(){
+
+			new Button(
+				"[GitHub Repository: Unity_NanoTimers]",
+				ORANGE_COLOR,
+				document.getElementById("githublink"),
+				"https://github.com/ghostravenstorm/Unity_NanoTimers"
+			);
+
+			var doc = new Button(
+				"[NanoTimers Documentation]",
+				PINK_COLOR,
+				document.getElementById("doclink"),
+				"NanoTimersDoc.docx"
+			);
+
+			codeBtn_A.btn = new Button(
+				"[Show " + codeBtn_A.lable + " +]",
+				BLUE_COLOR,
+				document.getElementById("codeSnippetBtn_A")
+			);
+			codeBtn_A.lableCtx = document.getElementById("codeSnippetBtn_A");
+			codeBtn_A.containerCtx = document.getElementById("codeSnippet_A");
+			codeBtn_A.btn.addFunction(toggleButton, [codeBtn_A]);
+		}
+
+		function toggleButton(btn){
+
+			if(btn.isVisible){
+            // Remove content and adjust lable and button state.
+            cleanUpChildNodes(btn.containerCtx);
+				btn.btn.setLabel("[Show " + btn.lable + " +]");
+            btn.containerCtx.innerHTML = "// Collapsed Code {...}";
+            btn.isVisible = false;
+         }
+         else{
+            // Insert content and adjust lable and button state.
+            btn.containerCtx.innerHTML = "";
+            var frame = document.createElement("IFRAME");
+            frame.setAttribute('width', "100%");
+            frame.setAttribute('height', "500px");
+            frame.setAttribute('frameborder', 'no');
+
+				// Pastebin link.
+            frame.setAttribute('src', btn.address);
+
+            btn.containerCtx.appendChild(frame);
+				btn.btn.setLabel("[Hide " + btn.lable + " -]");
+            btn.isVisible = true;
+         }
+			//console.log(btn.btn);
+		}
+
+   </script>
+</head>
+<body onload="onLoad()">
+   <span style="color: #777777">// Nano Timers ------------------------------</span>
+   <br>
+	<p style="width:80%;white-space:pre-wrap">
+Nano Timers - May 2017 (Personal Project)
+Developed in: Unity3D 5.6.1f1
+Development time: 2 weeks (On-going development)
+
+Summary:
+Open source timer API I created for Unity3D that makes it easy to incorporate high-precision stopwatches or countdown timers into game logic.
+</p>
+
+	<span id="githublink"></span><br>
+	<br>
+	<span id="doclink"></span><br>
+	<br>
+
+   <span id="codeSnippetBtn_A"></span>
+   <div id="codeSnippet_A" style="font-style:italic;color:#777777"> // Collapsed Code {...} </div>
+
+</body>
+</html>

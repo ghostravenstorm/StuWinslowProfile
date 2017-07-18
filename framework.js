@@ -3,11 +3,12 @@ const HIGHLIGHT_FCOLOR = "#000000";
 const HIGHLIGHT_BCOLOR = "#00FF00";
 const BACKGROUND_COLOR = "#262626";
 const BLUE_COLOR       = "#00BBCC";
-const ORANGE_COLOR     = "#C68C4B"
+const ORANGE_COLOR     = "#C68C4B";
 const PURPLE_COLOR     = "#AA80FF";
 const WHITE_COLOR      = "#ABB2BF";
 const BLACK_COLOR      = "#000000";
 const GRAY_COLOR       = "#777777";
+const PINK_COLOR       = "#ff00ff";
 
 
 const DEFAULT_COLOR = WHITE_COLOR;
@@ -36,6 +37,13 @@ function Button(label, normalColor, parentNode, address){
 		this.element.setAttribute('target', '_blank');
 	}
 
+	this.setLabel = function(text){
+		this.element.innerHTML = text;
+	}
+
+	this.setDownload = function(filename){
+		this.element.download = filename;
+	}
 
 	this.element.onclick = function(){
 		buttonFunction();
@@ -59,6 +67,7 @@ function Button(label, normalColor, parentNode, address){
 	}
 
 	var buttonFunction = function(){
+		if(func == null) return;
 		func.apply(this, param);
 	}
 
