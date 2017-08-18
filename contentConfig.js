@@ -38,11 +38,13 @@ var sketchbookLinks = [
 ];
 
 var linkList = [
-	"LinkedIn"
+	"LinkedIn",
+	"GitHub"
 	//"Itch.io"
 ];
 
 var linkLinkAddress = [
-	"https://www.linkedin.com/in/stuartwinslow"
+	"https://www.linkedin.com/in/stuartwinslow",
+	"https://github.com/ghostravenstorm/"
 	//"http://ghostravenstorm.itch.io/"
 ];
