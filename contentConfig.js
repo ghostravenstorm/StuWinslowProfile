@@ -18,7 +18,7 @@ var projectLinks = [
 	"projects/AllySelector/AllySelector.html",
 	"projects/nanotimers/nanotimers.html",
 	"projects/buffetblast/buffetblast.html",
-	"projects/pastrypanzerpanic/PastryPanzerPanic.html",
+	"projects/PastryPanzerPanic/PastryPanzerPanic.html",
 	"projects/AgentSilhouette/AgentSilhouette.html",
 	"projects/HotdogFlinger/HotdogFlinger.html",
 	"projects/PortalChaos/PortalChaos.html",
