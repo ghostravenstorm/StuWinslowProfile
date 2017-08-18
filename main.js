@@ -2,7 +2,7 @@
 function main(){
 	//setFormat();
 
-	var resumeButton = new Button("[Resume]", CYAN_COLOR, document.getElementById("resume"), resumeLink);
+	var resumeButton = new Button("[Resume]", DOWNLOAD_COLOR, document.getElementById("resume"), resumeLink);
 	var projectsButton = new Button("[Projects]", BLUE_COLOR, document.getElementById("projects"));
 	var aboutmeButton = new Button("[About]", BLUE_COLOR, document.getElementById("aboutme"));
 	var sketchbook_A = new Button("[Other", BLUE_COLOR, document.getElementById("sketchbook_A"))

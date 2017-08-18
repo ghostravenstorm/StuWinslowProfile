@@ -12,6 +12,9 @@ const PINK_COLOR       = "#ff00ff";
 const CYAN_COLOR       = "#42d1f4";
 
 
+const DOWNLOAD_COLOR = PINK_COLOR;
+const BTN_COLOR = BLUE_COLOR;
+const EXLINK_COLOR = ORANGE_COLOR;
 const DEFAULT_COLOR = WHITE_COLOR;
 
 
