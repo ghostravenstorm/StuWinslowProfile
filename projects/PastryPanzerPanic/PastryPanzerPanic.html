@@ -1,0 +1,147 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Pastry Panzer Panic</title>
+	<link type="text/css" rel="stylesheet" href="../../style.css">
+   <script src="../../framework.js"></script>
+	<script>
+
+	// Global variables for tracking button states.
+
+	var codeBtn_A = {
+		lable:        "ApolloLibrary.h",
+		address:      "http://pastebin.com/embed_iframe/Xr0DcRpm"
+	}
+	var codeBtn_B = {
+		lable:        "ApolloLibrary.cpp",
+		address:      "http://pastebin.com/embed_iframe/r7Jsvkwc"
+	}
+	var codeBtn_C = {
+		lable:        "BuffComponent.h",
+		address:      "http://pastebin.com/embed_iframe/1sx5GyY8"
+	}
+	var codeBtn_D = {
+		lable:        "BuffComponent.cpp",
+		address:      "http://pastebin.com/embed_iframe/sEp1u7pc"
+	}
+	var codeBtn_E = {
+		lable:        "BuffableInterface.h",
+		address:      "http://pastebin.com/embed_iframe/5dtB59h7"
+	}
+
+	function onLoad(){
+
+		codeBtn_A.btn = new Button(
+			"[Show " + codeBtn_A.lable + " +]",
+			BLUE_COLOR,
+			document.getElementById("codeSnippetBtn_A")
+		);
+		codeBtn_A.lableCtx = document.getElementById("codeSnippetBtn_A");
+		codeBtn_A.containerCtx = document.getElementById("codeSnippet_A");
+		codeBtn_A.btn.addFunction(toggleButton, [codeBtn_A]);
+
+		codeBtn_B.btn = new Button(
+			"[Show " + codeBtn_B.lable + " +]",
+			BLUE_COLOR,
+			document.getElementById("codeSnippetBtn_B")
+		);
+		codeBtn_B.lableCtx = document.getElementById("codeSnippetBtn_B");
+		codeBtn_B.containerCtx = document.getElementById("codeSnippet_B");
+		codeBtn_B.btn.addFunction(toggleButton, [codeBtn_B]);
+
+		codeBtn_C.btn = new Button(
+			"[Show " + codeBtn_C.lable + " +]",
+			BLUE_COLOR,
+			document.getElementById("codeSnippetBtn_C")
+		);
+		codeBtn_C.lableCtx = document.getElementById("codeSnippetBtn_C");
+		codeBtn_C.containerCtx = document.getElementById("codeSnippet_C");
+		codeBtn_C.btn.addFunction(toggleButton, [codeBtn_C]);
+
+		codeBtn_D.btn = new Button(
+			"[Show " + codeBtn_D.lable + " +]",
+			BLUE_COLOR,
+			document.getElementById("codeSnippetBtn_D")
+		);
+		codeBtn_D.lableCtx = document.getElementById("codeSnippetBtn_D");
+		codeBtn_D.containerCtx = document.getElementById("codeSnippet_D");
+		codeBtn_D.btn.addFunction(toggleButton, [codeBtn_D]);
+
+		codeBtn_E.btn = new Button(
+			"[Show " + codeBtn_E.lable + " +]",
+			BLUE_COLOR,
+			document.getElementById("codeSnippetBtn_E")
+		);
+		codeBtn_E.lableCtx = document.getElementById("codeSnippetBtn_E");
+		codeBtn_E.containerCtx = document.getElementById("codeSnippet_E");
+		codeBtn_E.btn.addFunction(toggleButton, [codeBtn_E]);
+	}
+
+	function toggleButton(btn){
+
+		if(btn.isVisible){
+			// Remove content and adjust lable and button state.
+			cleanUpChildNodes(btn.containerCtx);
+			btn.btn.setLabel("[Show " + btn.lable + " +]");
+			btn.containerCtx.innerHTML = "// Collapsed Code {...}";
+			btn.isVisible = false;
+		}
+		else{
+			// Insert content and adjust lable and button state.
+			btn.containerCtx.innerHTML = "";
+			var frame = document.createElement("IFRAME");
+			frame.setAttribute('width', "100%");
+			frame.setAttribute('height', "500px");
+			frame.setAttribute('frameborder', 'no');
+
+			// Pastebin link.
+			frame.setAttribute('src', btn.address);
+
+			btn.containerCtx.appendChild(frame);
+			btn.btn.setLabel("[Hide " + btn.lable + " -]");
+			btn.isVisible = true;
+		}
+		//console.log(btn.btn);
+	}
+
+
+   </script>
+</head>
+<body onload="onLoad()">
+   <span style="color: #777777">// Portal Choas ------------------------------</span>
+   <br>
+	<p style="width:80%;white-space:pre-wrap">
+Pastry Panzer Panic - Summer 2017 (Student Project)
+Developed in: Unreal 4.14
+Development time: 4 months
+Team size: 19
+Role: Sr Systems Programmer
+
+Pastry Panzer Panic is a single player tank combat game centered around a food aesthetic.
+<br>
+------------------------
+<br>
+Some handy functions written in C++ that are callable from Blueprints because defining them in Blueprints proved to be too cumbersome.<br>
+<span id="codeSnippetBtn_A"></span>
+<div id="codeSnippet_A" style="font-style:italic;color:#777777"> // Collapsed Code {...} </div>
+<br>
+<span id="codeSnippetBtn_B"></span>
+<div id="codeSnippet_B" style="font-style:italic;color:#777777"> // Collapsed Code {...} </div>
+<br>
+<br>
+Buff object defined in C++ with all base functionality required for timed status effects on the player. All buffs can be derived from this and functionality extended in Blueprints.<br>
+<span id="codeSnippetBtn_C"></span>
+<div id="codeSnippet_C" style="font-style:italic;color:#777777"> // Collapsed Code {...} </div>
+<br>
+<span id="codeSnippetBtn_D"></span>
+<div id="codeSnippet_D" style="font-style:italic;color:#777777"> // Collapsed Code {...} </div>
+<br>
+<br>
+Wrapper interface required to be defined in C++ because the base player is defined in C++ and this is a solution to allow Blueprint objects to interact with C++ objects.<br>
+<span id="codeSnippetBtn_E"></span>
+<div id="codeSnippet_E" style="font-style:italic;color:#777777"> // Collapsed Code {...} </div>
+
+</p>
+
+</body>
+</html>

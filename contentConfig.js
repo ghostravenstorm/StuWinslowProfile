@@ -6,8 +6,9 @@ var emailLink = "mailto:stu.winslow@outlook.com";
 var projectList = [
 	"AllySelector",
 	"NanoTimers",
-	"Agent Silhouette",
 	"Buffet Blast",
+	"Pastry Panzer Panic",
+	"Agent Silhouette",
 	"Hotdog Flinger",
 	"Portal Chaos",
 	"Doubloonacy"
@@ -16,8 +17,9 @@ var projectList = [
 var projectLinks = [
 	"projects/AllySelector/AllySelector.html",
 	"projects/nanotimers/nanotimers.html",
-	"projects/AgentSilhouette/AgentSilhouette.html",
 	"projects/buffetblast/buffetblast.html",
+	"projects/pastrypanzerpanic/PastryPanzerPanic.html",
+	"projects/AgentSilhouette/AgentSilhouette.html",
 	"projects/HotdogFlinger/HotdogFlinger.html",
 	"projects/PortalChaos/PortalChaos.html",
 	"projects/Doubloonacy/Doubloonacy.html"

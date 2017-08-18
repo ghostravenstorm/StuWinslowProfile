@@ -2,11 +2,11 @@
 function main(){
 	//setFormat();
 
-	var resumeButton = new Button("[Resume]", PINK_COLOR, document.getElementById("resume"), resumeLink);
+	var resumeButton = new Button("[Resume]", CYAN_COLOR, document.getElementById("resume"), resumeLink);
 	var projectsButton = new Button("[Projects]", BLUE_COLOR, document.getElementById("projects"));
 	var aboutmeButton = new Button("[About]", BLUE_COLOR, document.getElementById("aboutme"));
-	var sketchbook_A = new Button("[Sketch", BLUE_COLOR, document.getElementById("sketchbook_A"))
-	var sketchbook_B = new Button("book]", BLUE_COLOR, document.getElementById("sketchbook_B"))
+	var sketchbook_A = new Button("[Other", BLUE_COLOR, document.getElementById("sketchbook_A"))
+	var sketchbook_B = new Button("Code]", BLUE_COLOR, document.getElementById("sketchbook_B"))
 
 
 	projectsButton.addFunction(OnProjectsBtn);
@@ -99,7 +99,7 @@ function onSketchbookBtn(){
 	cleanUpChildNodes(document.getElementById("bodycontent"));
 	cleanUpChildNodes(document.getElementById("stuff"));
 	var sketchbookContainer = new Container("sketchbookContainer", document.getElementById("bodycontent"));
-	document.getElementById("bodyheaderid").innerHTML = "Sketchbook ";
+	document.getElementById("bodyheaderid").innerHTML = "Other Code ";
 
 	var list = [];
 	addBreak(sketchbookContainer.getElement());

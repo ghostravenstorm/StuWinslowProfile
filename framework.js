@@ -9,6 +9,7 @@ const WHITE_COLOR      = "#ABB2BF";
 const BLACK_COLOR      = "#000000";
 const GRAY_COLOR       = "#777777";
 const PINK_COLOR       = "#ff00ff";
+const CYAN_COLOR       = "#42d1f4";
 
 
 const DEFAULT_COLOR = WHITE_COLOR;
