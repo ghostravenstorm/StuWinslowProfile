@@ -1,7 +1,7 @@
 
 //var resumeLink = "https://docs.google.com/document/d/1QyKXXZwgNdCnf0VfyVlawiNG5huBvqn1bOdrUOJO1yY/edit?usp=sharing";
 var resumeLink = "StuartWinslow_Resume_2018-02-07.pdf";
-var emailLink = "mailto:stu.winslow@outlook.com";
+var emailLink = "mailto:swinslow@protonmail.com";
 
 var projectList = [
 	"AllySelector",
