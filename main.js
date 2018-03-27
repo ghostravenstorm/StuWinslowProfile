@@ -34,8 +34,8 @@ function onAboutMeBtn(){
 	cleanUpChildNodes(document.getElementById("stuff"));
 
 	var frame = document.createElement("IFRAME");
-	frame.setAttribute('width', "650");
-	frame.setAttribute('height', "250");
+	frame.setAttribute('width', "750");
+	frame.setAttribute('height', "350");
 	frame.setAttribute('frameborder', 'no');
 	frame.setAttribute('scrolling', 'no');
 	frame.setAttribute('src', 'aboutme.html');
