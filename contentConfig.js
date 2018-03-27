@@ -1,6 +1,6 @@
 
 //var resumeLink = "https://docs.google.com/document/d/1QyKXXZwgNdCnf0VfyVlawiNG5huBvqn1bOdrUOJO1yY/edit?usp=sharing";
-var resumeLink = "StuartWinslow_Resume_2018-03-27.pdf";
+var resumeLink = "StuartWinslow_Resume_2018-03-27_1.pdf";
 var emailLink = "mailto:stu.winslow@outlook.com";
 
 var projectList = [
