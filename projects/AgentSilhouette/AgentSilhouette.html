@@ -36,6 +36,14 @@
 			codeBtn_A.containerCtx = document.getElementById("codeSnippet_A");
 			codeBtn_A.btn.addFunction(toggleButton, [codeBtn_A]);
 
+
+         var itchio = new Button(
+            "[Itch.IO - Agent Silhouette]",
+            ORANGE_COLOR,
+            document.getElementById("itchiolink"),
+            "https://joshua-vallejo.itch.io/agent-silhouette"
+         )
+
 			codeBtn_B.btn = new Button(
 				"[Show " + codeBtn_B.lable + " +]",
 				BLUE_COLOR,
@@ -107,6 +115,16 @@ Role: Level Design, Sound Design, UI Design,
 Summary:
 Agent Silhouette is a stealth game revolved around the player's ability to carefully time their jumps, rope swings, and to sneak past guards and other security devices without being detected.<br><br>Agent Silhouette also features a custom input controller I developed to handle random events that take button input such as switches and buttons that only toggle if these instances have reference to a valid input controller. This design approach more or less uses a Command pattern to process input.
 </p>
+<br>----------<br>
+<p>
+   <h3>2018 FALL UPDATE:</h3>
+   Agent Silhouette is now officially going indie!<br>
+   The original team that worked on this student project is back to add more features and polish the design and mechanics under the PSI Games banner founded by my colleague and project contrubutor: Joshua Vallejo.
+</p>
+----------<br><br>
+
+   <span id="itchiolink"></span><br>
+   <br>
 
    <span id="codeSnippetBtn_A"></span>
    <div id="codeSnippet_A" style="font-style:italic;color:#777777"> // Collapsed Code {...} </div>

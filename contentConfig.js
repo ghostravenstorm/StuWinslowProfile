@@ -1,25 +1,25 @@
 
 //var resumeLink = "https://docs.google.com/document/d/1QyKXXZwgNdCnf0VfyVlawiNG5huBvqn1bOdrUOJO1yY/edit?usp=sharing";
-var resumeLink = "StuartWinslow_Resume_2018-03-27_1.pdf";
-var emailLink = "mailto:stu.winslow@outlook.com";
+var resumeLink = "StuartWinslow_Resume_2019-02-05.pdf";
+var emailLink = "mailto:swinslow@protonmail.com";
 
 var projectList = [
+   "Agent Silhouette",
 	"AllySelector",
 	"NanoTimers",
 	"Buffet Blast",
 	"Pastry Panzer Panic",
-	"Agent Silhouette",
 	"Hotdog Flinger",
 	"Portal Chaos",
 	"Doubloonacy"
 ];
 
 var projectLinks = [
+   "projects/AgentSilhouette/AgentSilhouette.html",
 	"projects/AllySelector/AllySelector.html",
 	"projects/nanotimers/nanotimers.html",
 	"projects/buffetblast/buffetblast.html",
 	"projects/PastryPanzerPanic/PastryPanzerPanic.html",
-	"projects/AgentSilhouette/AgentSilhouette.html",
 	"projects/HotdogFlinger/HotdogFlinger.html",
 	"projects/PortalChaos/PortalChaos.html",
 	"projects/Doubloonacy/Doubloonacy.html"
